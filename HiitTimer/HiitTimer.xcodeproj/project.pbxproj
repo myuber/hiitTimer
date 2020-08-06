@@ -13,6 +13,8 @@
 		465A6BE424DC4A5C00299B78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 465A6BE324DC4A5C00299B78 /* Assets.xcassets */; };
 		465A6BE724DC4A5C00299B78 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 465A6BE624DC4A5C00299B78 /* Preview Assets.xcassets */; };
 		465A6BEA24DC4A5C00299B78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 465A6BE824DC4A5C00299B78 /* LaunchScreen.storyboard */; };
+		465A6BF224DC4C7400299B78 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BF124DC4C7400299B78 /* TimerView.swift */; };
+		465A6BF424DC4CD100299B78 /* CalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BF324DC4CD100299B78 /* CalcView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		465A6BE624DC4A5C00299B78 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		465A6BE924DC4A5C00299B78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		465A6BEB24DC4A5C00299B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		465A6BF124DC4C7400299B78 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		465A6BF324DC4CD100299B78 /* CalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				465A6BE824DC4A5C00299B78 /* LaunchScreen.storyboard */,
 				465A6BEB24DC4A5C00299B78 /* Info.plist */,
 				465A6BE524DC4A5C00299B78 /* Preview Content */,
+				465A6BF124DC4C7400299B78 /* TimerView.swift */,
+				465A6BF324DC4CD100299B78 /* CalcView.swift */,
 			);
 			path = HiitTimer;
 			sourceTree = "<group>";
@@ -148,6 +154,8 @@
 			files = (
 				465A6BDE24DC4A5700299B78 /* AppDelegate.swift in Sources */,
 				465A6BE024DC4A5700299B78 /* SceneDelegate.swift in Sources */,
+				465A6BF224DC4C7400299B78 /* TimerView.swift in Sources */,
+				465A6BF424DC4CD100299B78 /* CalcView.swift in Sources */,
 				465A6BE224DC4A5700299B78 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
