@@ -15,6 +15,7 @@
 		465A6BEA24DC4A5C00299B78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 465A6BE824DC4A5C00299B78 /* LaunchScreen.storyboard */; };
 		465A6BF224DC4C7400299B78 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BF124DC4C7400299B78 /* TimerView.swift */; };
 		465A6BF424DC4CD100299B78 /* CalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BF324DC4CD100299B78 /* CalcView.swift */; };
+		465A6BF824DDA12B00299B78 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BF724DDA12B00299B78 /* CountDownTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		465A6BEB24DC4A5C00299B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		465A6BF124DC4C7400299B78 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		465A6BF324DC4CD100299B78 /* CalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcView.swift; sourceTree = "<group>"; };
+		465A6BF724DDA12B00299B78 /* CountDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		465A6BD124DC4A5700299B78 = {
 			isa = PBXGroup;
 			children = (
+				465A6BF724DDA12B00299B78 /* CountDownTimer.swift */,
 				465A6BDC24DC4A5700299B78 /* HiitTimer */,
 				465A6BDB24DC4A5700299B78 /* Products */,
 			);
@@ -155,6 +158,7 @@
 				465A6BDE24DC4A5700299B78 /* AppDelegate.swift in Sources */,
 				465A6BE024DC4A5700299B78 /* SceneDelegate.swift in Sources */,
 				465A6BF224DC4C7400299B78 /* TimerView.swift in Sources */,
+				465A6BF824DDA12B00299B78 /* CountDownTimer.swift in Sources */,
 				465A6BF424DC4CD100299B78 /* CalcView.swift in Sources */,
 				465A6BE224DC4A5700299B78 /* ContentView.swift in Sources */,
 			);
