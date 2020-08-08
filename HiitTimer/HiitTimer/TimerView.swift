@@ -11,8 +11,11 @@ import SwiftUI
 struct TimerView: View {
     @ObservedObject var countdowntimer = CountDownTimer()
     
+    
     var body: some View {
         VStack {
+            // タイマーを表示
+            Text("\(self.countdowntimer.counter)")
             HStack {
                 // スタートボタン
                 Button(action: {
@@ -36,8 +39,6 @@ struct TimerView: View {
                 }.padding()
             }
             .frame(width: 200)
-            // タイマーを表示
-            Text("\(self.countdowntimer.counter)")
         }.font(.largeTitle)
     }
 }
