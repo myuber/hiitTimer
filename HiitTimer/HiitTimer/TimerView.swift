@@ -9,10 +9,14 @@
 import SwiftUI
 
 struct TimerView: View {
+    // CountDownTimerのインスタンスを作成
     @ObservedObject var countdowntimer = CountDownTimer()
     
     var body: some View {
         VStack {
+            // タイマーを表示
+            Text("\(self.countdowntimer.counter)")
+        
             HStack {
                 // スタートボタン
                 Button(action: {
@@ -34,14 +38,16 @@ struct TimerView: View {
                 }) {
                     Image(systemName: "backward.end")
                 }.padding()
-            }
-            .frame(width: 200)
-            // タイマーを表示
-            Text("\(self.countdowntimer.counter)")
+            }.frame(width: 200)
+        
         }.font(.largeTitle)
+        // タイマーが0になったら、アラートを表示する
+        // アラートのOKボタンを押すと、countdowntimerのresetメソッドを実行
+        .alert(isPresented: $countdowntimer.isEnd, content: {
+            Alert(title: Text("タイマー終了"), message: Text("お疲れ様でした"), dismissButton: .default(Text("OK"), action: {self.countdowntimer.reset()}))
+        })
     }
 }
-
 
 
 struct TimerView_Previews: PreviewProvider {

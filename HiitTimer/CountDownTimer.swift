@@ -12,7 +12,8 @@ import Foundation
 // タイマークラスを定義
 class CountDownTimer: ObservableObject {
     // 共有できる変数
-    @Published var counter: Int = 0
+    @Published var counter: Int = 3
+    @Published var isEnd: Bool = false
     
     // タイマーを作成
     var timer : Timer?
@@ -29,7 +30,13 @@ class CountDownTimer: ObservableObject {
         }
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {_ in
-            self.counter += 1
+            // 0以下になるまでカウントダウンする
+            if self.counter > 0 {
+                self.counter -= 1
+            // 0以下になったら、coutner変数を0にする
+            } else {
+                self.isEnd = true
+            }
         }
     }
     
@@ -53,7 +60,7 @@ class CountDownTimer: ObservableObject {
                 nowTimer.invalidate()
             }
         }
-        counter = 0
+        counter = 3
     }
 
 }
