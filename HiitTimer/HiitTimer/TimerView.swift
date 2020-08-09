@@ -12,11 +12,26 @@ struct TimerView: View {
     // CountDownTimerのインスタンスを作成
     @ObservedObject var countdowntimer = CountDownTimer()
     
+    // 共有のデータを保持する
+    @EnvironmentObject var shareData: ShareData
+    
+    // モーダルビューを表示するための変数を定義
+    @State var isModal: Bool = false
+    
     var body: some View {
         VStack {
             // タイマーを表示
-            Text("\(self.countdowntimer.counter)")
-        
+            // 数字をタップするとモーダルビューが表示される
+            Button(action: {
+                self.isModal = true
+            }) {
+                Text("\(self.countdowntimer.counter)")
+            }
+            .sheet(isPresented: $isModal) {
+                // モーダルビューに共有データを教える
+                SettingView().environmentObject(self.shareData)
+            }
+            
             HStack {
                 // スタートボタン
                 Button(action: {
@@ -53,5 +68,6 @@ struct TimerView: View {
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         TimerView()
+        .environmentObject(ShareData())
     }
 }

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var shareData: ShareData
     @State private var selection = 0
  
     var body: some View {
