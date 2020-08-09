@@ -16,6 +16,8 @@
 		465A6BF224DC4C7400299B78 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BF124DC4C7400299B78 /* TimerView.swift */; };
 		465A6BF424DC4CD100299B78 /* CalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BF324DC4CD100299B78 /* CalcView.swift */; };
 		465A6BF824DDA12B00299B78 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BF724DDA12B00299B78 /* CountDownTimer.swift */; };
+		465A6C7A24E0465500299B78 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6C7924E0465500299B78 /* SettingView.swift */; };
+		465A6C7C24E04BC600299B78 /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6C7B24E04BC600299B78 /* ShareData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		465A6BF124DC4C7400299B78 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		465A6BF324DC4CD100299B78 /* CalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcView.swift; sourceTree = "<group>"; };
 		465A6BF724DDA12B00299B78 /* CountDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
+		465A6C7924E0465500299B78 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		465A6C7B24E04BC600299B78 /* ShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				465A6BDD24DC4A5700299B78 /* AppDelegate.swift */,
 				465A6BDF24DC4A5700299B78 /* SceneDelegate.swift */,
 				465A6BE124DC4A5700299B78 /* ContentView.swift */,
+				465A6C7924E0465500299B78 /* SettingView.swift */,
+				465A6C7B24E04BC600299B78 /* ShareData.swift */,
 				465A6BE324DC4A5C00299B78 /* Assets.xcassets */,
 				465A6BE824DC4A5C00299B78 /* LaunchScreen.storyboard */,
 				465A6BEB24DC4A5C00299B78 /* Info.plist */,
@@ -158,9 +164,11 @@
 				465A6BDE24DC4A5700299B78 /* AppDelegate.swift in Sources */,
 				465A6BE024DC4A5700299B78 /* SceneDelegate.swift in Sources */,
 				465A6BF224DC4C7400299B78 /* TimerView.swift in Sources */,
+				465A6C7A24E0465500299B78 /* SettingView.swift in Sources */,
 				465A6BF824DDA12B00299B78 /* CountDownTimer.swift in Sources */,
 				465A6BF424DC4CD100299B78 /* CalcView.swift in Sources */,
 				465A6BE224DC4A5700299B78 /* ContentView.swift in Sources */,
+				465A6C7C24E04BC600299B78 /* ShareData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
