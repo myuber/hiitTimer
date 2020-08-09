@@ -50,7 +50,6 @@
 		465A6BD124DC4A5700299B78 = {
 			isa = PBXGroup;
 			children = (
-				465A6BF724DDA12B00299B78 /* CountDownTimer.swift */,
 				465A6BDC24DC4A5700299B78 /* HiitTimer */,
 				465A6BDB24DC4A5700299B78 /* Products */,
 			);
@@ -72,12 +71,13 @@
 				465A6BE124DC4A5700299B78 /* ContentView.swift */,
 				465A6C7924E0465500299B78 /* SettingView.swift */,
 				465A6C7B24E04BC600299B78 /* ShareData.swift */,
+				465A6BF724DDA12B00299B78 /* CountDownTimer.swift */,
+				465A6BF124DC4C7400299B78 /* TimerView.swift */,
+				465A6BF324DC4CD100299B78 /* CalcView.swift */,
 				465A6BE324DC4A5C00299B78 /* Assets.xcassets */,
 				465A6BE824DC4A5C00299B78 /* LaunchScreen.storyboard */,
 				465A6BEB24DC4A5C00299B78 /* Info.plist */,
 				465A6BE524DC4A5C00299B78 /* Preview Content */,
-				465A6BF124DC4C7400299B78 /* TimerView.swift */,
-				465A6BF324DC4CD100299B78 /* CalcView.swift */,
 			);
 			path = HiitTimer;
 			sourceTree = "<group>";

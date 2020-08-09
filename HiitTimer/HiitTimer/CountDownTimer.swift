@@ -12,8 +12,15 @@ import Foundation
 // タイマークラスを定義
 class CountDownTimer: ObservableObject {
     // 共有できる変数
-    @Published var counter: Int = 3
-    @Published var isEnd: Bool = false
+    @EnvironmentObject var shareData: ShareData
+    
+    @Published var counter: Int
+    @Published var isEnd: Bool
+    
+    init() {
+        self.counter = shareData.selectTime
+        self.isEnd = false
+    }
     
     // タイマーを作成
     var timer : Timer?
