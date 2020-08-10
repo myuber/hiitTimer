@@ -12,7 +12,9 @@ import Foundation
 // タイマークラスを定義
 class CountDownTimer: ObservableObject {
     
+    // タイマーの数値を変数に格納してカウントダウンする
     @Published var counter: Int
+    // アラートを出現させるために、タイマーの終了を格納する変数
     @Published var isEnd: Bool = false
     
     init(_ countNum: Int){

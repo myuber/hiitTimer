@@ -20,17 +20,34 @@ struct TimerView: View {
     
     var body: some View {
         VStack {
+            Text("Training")
             // タイマーを表示
-            // 数字をタップするとモーダルビューが表示される
-            Button(action: {
-                self.isModal = true
-            }) {
-                Text("\(self.countdowntimer.counter)")
-            }// シートで数値を変えるごとに共有データShareDataのTIMES配列から数値を持ってきて、タイマーの数値を変更する
-            .sheet(isPresented: $isModal, onDismiss:{self.countdowntimer.setValue(self.shareData.TIMES[self.shareData.selectTime])}) {
-                // モーダルビューに共有データを教える
-                SettingView().environmentObject(self.shareData)
+            ZStack {
+                // 数字をタップするとモーダルビューが表示される
+                Button(action: {
+                    self.isModal = true
+                }) {
+                    Text("\(self.countdowntimer.counter)")
+                }// シートで数値を変えるごとに共有データShareDataのTIMES配列から数値を持ってきて、タイマーの数値を変更する
+                .sheet(isPresented: $isModal, onDismiss:{self.countdowntimer.setValue(self.shareData.TIMES[self.shareData.selectTime])}) {
+                    // モーダルビューに共有データを教える
+                    SettingView().environmentObject(self.shareData)
+                }
+
+                // 背景のグレーの円を描画
+                Circle()
+                    .stroke(Color(.systemGray), style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .bevel))
+                    .aspectRatio(contentMode: .fit)
+                    .padding()
+
+                // 水色のプログレスバーを描画
+                Circle().trim(from: 0, to: CGFloat(self.countdowntimer.counter) / CGFloat(self.shareData.TIMES[self.shareData.selectTime]))
+                    .stroke(Color(.systemTeal), style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .bevel))
+                    .aspectRatio(contentMode: .fit)
+                    .rotationEffect(Angle(degrees: -90))
+                    .padding()
             }
+            
             
             HStack {
                 // スタートボタン

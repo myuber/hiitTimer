@@ -14,6 +14,7 @@ struct SettingView: View {
     
     var body: some View {
         ZStack{
+            
             // 背景
             Color(red: 0.9, green: 0.9, blue: 0.8)
                 .edgesIgnoringSafeArea(.all)
@@ -24,8 +25,9 @@ struct SettingView: View {
                     .padding()
                     , alignment: .top )
             VStack {
-                
-                Text("TIME SELECT")
+                Spacer()
+
+                Text("TRAINING TIME")
                     .font(.title)
                 Text("\(shareData.selectTime)")
                 Picker(selection: $shareData.selectTime, label: Text("TIME SELECT")) {
@@ -38,7 +40,7 @@ struct SettingView: View {
                 Divider()
                 
                 
-                Text("INTERVAL SELECT")
+                Text("INTERVAL TIME")
                     .font(.title)
                     .fontWeight(.medium)
                     .foregroundColor(Color.blue)
