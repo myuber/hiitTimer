@@ -13,22 +13,21 @@ struct TimerView: View {
     @EnvironmentObject var shareData: ShareData
     
     // CountDownTimerのインスタンスを作成
-    @ObservedObject var countdowntimer = CountDownTimer(countNum: 20)
+    @ObservedObject var countdowntimer = CountDownTimer(20)
     
     // モーダルビューを表示するための変数を定義
     @State var isModal: Bool = false
     
     var body: some View {
         VStack {
-            Text("\(shareData.selectTime)")
             // タイマーを表示
             // 数字をタップするとモーダルビューが表示される
             Button(action: {
                 self.isModal = true
             }) {
                 Text("\(self.countdowntimer.counter)")
-            }
-            .sheet(isPresented: $isModal) {
+            }// シートで数値を変えるごとに共有データShareDataのTIMES配列から数値を持ってきて、タイマーの数値を変更する
+            .sheet(isPresented: $isModal, onDismiss:{self.countdowntimer.setValue(self.shareData.TIMES[self.shareData.selectTime])}) {
                 // モーダルビューに共有データを教える
                 SettingView().environmentObject(self.shareData)
             }
@@ -50,7 +49,7 @@ struct TimerView: View {
                 
                 // 中断ボタン
                 Button(action: {
-                    self.countdowntimer.reset()
+                    self.countdowntimer.reset(self.shareData.TIMES[self.shareData.selectTime])
                 }) {
                     Image(systemName: "backward.end")
                 }.padding()
@@ -60,7 +59,7 @@ struct TimerView: View {
         // タイマーが0になったら、アラートを表示する
         // アラートのOKボタンを押すと、countdowntimerのresetメソッドを実行
         .alert(isPresented: $countdowntimer.isEnd, content: {
-            Alert(title: Text("タイマー終了"), message: Text("お疲れ様でした"), dismissButton: .default(Text("OK"), action: {self.countdowntimer.reset()}))
+            Alert(title: Text("タイマー終了"), message: Text("お疲れ様でした"), dismissButton: .default(Text("OK"), action: {self.countdowntimer.reset(self.shareData.TIMES[self.shareData.selectTime])}))
         })
     }
 }

@@ -12,9 +12,6 @@ struct SettingView: View {
     // 共有できるデータを保持
     @EnvironmentObject var shareData: ShareData
     
-    let TIMES = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
-    let INTERVALS = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
-    
     var body: some View {
         ZStack{
             // 背景
@@ -32,8 +29,8 @@ struct SettingView: View {
                     .font(.title)
                 Text("\(shareData.selectTime)")
                 Picker(selection: $shareData.selectTime, label: Text("TIME SELECT")) {
-                    ForEach(0..<TIMES.count) { index in
-                        Text("\(self.TIMES[index])").tag(index)
+                    ForEach(0..<self.shareData.TIMES.count) { index in
+                        Text("\(self.shareData.TIMES[index])").tag(index)
                     }
                 }.frame(width: 200)
                 
@@ -46,8 +43,8 @@ struct SettingView: View {
                     .fontWeight(.medium)
                     .foregroundColor(Color.blue)
                 Picker(selection: $shareData.selectInterval, label: Text("INTERVAL SELECT")) {
-                    ForEach(0..<INTERVALS.count) { index in
-                        Text("\(self.INTERVALS[index])").tag(index)
+                    ForEach(0..<self.shareData.INTERVALS.count) { index in
+                        Text("\(self.shareData.INTERVALS[index])").tag(index)
                     }
                 }.frame(width: 200)
             }

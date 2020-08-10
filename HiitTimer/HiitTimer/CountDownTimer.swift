@@ -15,7 +15,7 @@ class CountDownTimer: ObservableObject {
     @Published var counter: Int
     @Published var isEnd: Bool = false
     
-    init(countNum: Int){
+    init(_ countNum: Int){
         self.counter = countNum
     }
     
@@ -56,7 +56,7 @@ class CountDownTimer: ObservableObject {
     }
     
     // タイマーをリセット
-    func reset() {
+    func reset(_ countNum: Int) {
         // timerをアンラップしてnowTimerに代入
         if let nowTimer = timer {
             // もしタイマーが、実行中だったら中断
@@ -64,7 +64,11 @@ class CountDownTimer: ObservableObject {
                 nowTimer.invalidate()
             }
         }
-        counter = 3
+        self.counter = countNum
+    }
+    
+    func setValue(_ countNum: Int) {
+        self.counter = countNum
     }
 
 }
