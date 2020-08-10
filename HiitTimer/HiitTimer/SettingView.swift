@@ -30,6 +30,7 @@ struct SettingView: View {
                 
                 Text("TIME SELECT")
                     .font(.title)
+                Text("\(shareData.selectTime)")
                 Picker(selection: $shareData.selectTime, label: Text("TIME SELECT")) {
                     ForEach(0..<TIMES.count) { index in
                         Text("\(self.TIMES[index])").tag(index)
@@ -50,10 +51,10 @@ struct SettingView: View {
                     }
                 }.frame(width: 200)
             }
-
         }
     }
 }
+
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {

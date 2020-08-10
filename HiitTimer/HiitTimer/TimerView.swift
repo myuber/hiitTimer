@@ -9,17 +9,18 @@
 import SwiftUI
 
 struct TimerView: View {
-    // CountDownTimerのインスタンスを作成
-    @ObservedObject var countdowntimer = CountDownTimer()
-    
     // 共有のデータを保持する
     @EnvironmentObject var shareData: ShareData
+    
+    // CountDownTimerのインスタンスを作成
+    @ObservedObject var countdowntimer = CountDownTimer(countNum: 20)
     
     // モーダルビューを表示するための変数を定義
     @State var isModal: Bool = false
     
     var body: some View {
         VStack {
+            Text("\(shareData.selectTime)")
             // タイマーを表示
             // 数字をタップするとモーダルビューが表示される
             Button(action: {

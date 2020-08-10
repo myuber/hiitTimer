@@ -10,6 +10,6 @@ import Foundation
 
 // 共有するデータ
 class ShareData: ObservableObject {
-    @Published var selectTime = 20
-    @Published var selectInterval = 20
+    @Published var selectTime = 3
+    @Published var selectInterval = 3
 }
