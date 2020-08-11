@@ -9,11 +9,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    // 共有するデータを保持
     @EnvironmentObject var shareData: ShareData
+    
+    // 表示タブを切り替える変数を定義
     @State private var selection = 0
  
     var body: some View {
         TabView(selection: $selection){
+            
             TimerView()
                 .tabItem {
                     VStack {
@@ -22,6 +26,7 @@ struct ContentView: View {
                     }
                 }
                 .tag(0)
+            
             CalcView()
                 .tabItem {
                     VStack {
