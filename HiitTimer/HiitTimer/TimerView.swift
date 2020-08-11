@@ -14,22 +14,37 @@ struct TimerView: View {
     
     // CountDownTimerのインスタンスを作成
     @ObservedObject var countdowntimer = CountDownTimer(20)
+    @ObservedObject var intervaltimer = CountDownTimer(20)
     
     // モーダルビューを表示するための変数を定義
     @State var isModal: Bool = false
+
+    // タイマーをtrainig/intervalを判定するための変数を定義
+    @State var isTimer: Bool = true
     
     var body: some View {
         VStack {
-            Text("Training")
+            Text(isTimer ? "Training" : "Interval")
+            
             // タイマーを表示
             ZStack {
                 // 数字をタップするとモーダルビューが表示される
-                Button(action: {
-                    self.isModal = true
-                }) {
-                    Text("\(self.countdowntimer.counter)")
+                VStack {
+                    Button(action: {
+                        self.isModal = true
+                    }) {
+                        Text("\(self.countdowntimer.counter)")
+                    }
+                    Button(action: {
+                        self.isModal = true
+                    }) {
+                        Text("\(self.intervaltimer.counter)")
+                    }
                 }// シートで数値を変えるごとに共有データShareDataのTIMES配列から数値を持ってきて、タイマーの数値を変更する
-                .sheet(isPresented: $isModal, onDismiss:{self.countdowntimer.setValue(self.shareData.TIMES[self.shareData.selectTime])}) {
+                    .sheet(isPresented: $isModal,
+                           onDismiss:{self.countdowntimer.setValue(self.shareData.TIMES[self.shareData.selectTime]);
+                            self.intervaltimer.setValue(self.shareData.INTERVALS[self.shareData.selectInterval])
+                    }) {
                     // モーダルビューに共有データを教える
                     SettingView().environmentObject(self.shareData)
                 }
@@ -39,9 +54,9 @@ struct TimerView: View {
                     .stroke(Color(.systemGray), style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .bevel))
                     .aspectRatio(contentMode: .fit)
                     .padding()
-
                 // 水色のプログレスバーを描画
-                Circle().trim(from: 0, to: CGFloat(self.countdowntimer.counter) / CGFloat(self.shareData.TIMES[self.shareData.selectTime]))
+                Circle().trim(from: 0, to:
+                    CGFloat(self.countdowntimer.counter)/CGFloat(self.shareData.TIMES[self.shareData.selectTime]))
                     .stroke(Color(.systemTeal), style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .bevel))
                     .aspectRatio(contentMode: .fit)
                     .rotationEffect(Angle(degrees: -90))

@@ -8,10 +8,8 @@
 
 import Foundation
 
-
 // タイマークラスを定義
 class CountDownTimer: ObservableObject {
-    
     // タイマーの数値を変数に格納してカウントダウンする
     @Published var counter: Int
     // アラートを出現させるために、タイマーの終了を格納する変数
@@ -23,6 +21,7 @@ class CountDownTimer: ObservableObject {
     
     // タイマーを作成
     var timer : Timer?
+    
     
     // 実際に使うタイマーを作ってスタート
     func start() {
@@ -46,6 +45,7 @@ class CountDownTimer: ObservableObject {
         }
     }
     
+    
     // タイマーを止める
     func stop() {
         // timerをアンラップしてnowTimerに代入
@@ -56,6 +56,7 @@ class CountDownTimer: ObservableObject {
             }
         }
     }
+    
     
     // タイマーをリセット
     func reset(_ countNum: Int) {
@@ -69,6 +70,7 @@ class CountDownTimer: ObservableObject {
         self.counter = countNum
     }
     
+    // タイマーの値をセットする
     func setValue(_ countNum: Int) {
         self.counter = countNum
     }
