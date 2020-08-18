@@ -20,7 +20,6 @@ struct TimerView: View {
 
     
     var body: some View {
-        
         VStack {
             Text(countdowntimer.isTimer ? "Training" : "Interval")
             
