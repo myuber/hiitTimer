@@ -39,7 +39,6 @@ struct SettingView: View {
                 // 区切り線
                 Divider()
                 
-                
                 Text("INTERVAL TIME")
                     .font(.title)
                     .fontWeight(.medium)
@@ -49,6 +48,20 @@ struct SettingView: View {
                         Text("\(self.shareData.INTERVALS[index])").tag(index)
                     }
                 }.frame(width: 200)
+                
+                // 区切り線
+                Divider()
+                
+                Text("NUMBER OF TIMES")
+                    .font(.title)
+                    .fontWeight(.medium)
+                    .foregroundColor(Color.blue)
+                Picker(selection: $shareData.selectNumOfTimes, label: Text("NUMBER OF TIMES SELECT")) {
+                    ForEach(0..<self.shareData.NUMBEROFTIMES.count) { index in
+                        Text("\(self.shareData.NUMBEROFTIMES[index])").tag(index)
+                    }
+                }.frame(width: 200)
+                
             }
         }
     }
