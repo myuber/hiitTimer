@@ -2,19 +2,23 @@
 //  ContentView.swift
 //  HiitTimer
 //
-//  Created by がり on 2020/08/19.
+//  Created by がり on 2020/08/06.
 //  Copyright © 2020 がり. All rights reserved.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    // 共有するデータを保持
+    @EnvironmentObject var shareData: ShareData
+    
+    // 表示タブを切り替える変数を定義
     @State private var selection = 0
  
     var body: some View {
         TabView(selection: $selection){
-            Text("First View")
-                .font(.title)
+            
+            TimerView()
                 .tabItem {
                     VStack {
                         Image("first")
@@ -22,8 +26,8 @@ struct ContentView: View {
                     }
                 }
                 .tag(0)
-            Text("Second View")
-                .font(.title)
+            
+            CalcView()
                 .tabItem {
                     VStack {
                         Image("second")

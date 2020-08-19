@@ -7,35 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		463F758A24EC9B1A008F6CC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463F758924EC9B1A008F6CC4 /* AppDelegate.swift */; };
-		463F758C24EC9B1A008F6CC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463F758B24EC9B1A008F6CC4 /* SceneDelegate.swift */; };
-		463F758F24EC9B1A008F6CC4 /* HiitTimer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 463F758D24EC9B1A008F6CC4 /* HiitTimer.xcdatamodeld */; };
-		463F759124EC9B1A008F6CC4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463F759024EC9B1A008F6CC4 /* ContentView.swift */; };
-		463F759324EC9B1C008F6CC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463F759224EC9B1C008F6CC4 /* Assets.xcassets */; };
-		463F759624EC9B1C008F6CC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463F759524EC9B1C008F6CC4 /* Preview Assets.xcassets */; };
-		463F759924EC9B1C008F6CC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463F759724EC9B1C008F6CC4 /* LaunchScreen.storyboard */; };
-		4650902124ED6B610083021D /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4650902024ED6B610083021D /* SettingView.swift */; };
-		4650902324ED6DAB0083021D /* TimerEntity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4650902224ED6DAB0083021D /* TimerEntity+Extension.swift */; };
-		4650902624ED6F600083021D /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4650902524ED6F600083021D /* TimerView.swift */; };
+		465A6BDE24DC4A5700299B78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BDD24DC4A5700299B78 /* AppDelegate.swift */; };
+		465A6BE024DC4A5700299B78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BDF24DC4A5700299B78 /* SceneDelegate.swift */; };
+		465A6BE224DC4A5700299B78 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BE124DC4A5700299B78 /* ContentView.swift */; };
+		465A6BE424DC4A5C00299B78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 465A6BE324DC4A5C00299B78 /* Assets.xcassets */; };
+		465A6BE724DC4A5C00299B78 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 465A6BE624DC4A5C00299B78 /* Preview Assets.xcassets */; };
+		465A6BEA24DC4A5C00299B78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 465A6BE824DC4A5C00299B78 /* LaunchScreen.storyboard */; };
+		465A6BF224DC4C7400299B78 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BF124DC4C7400299B78 /* TimerView.swift */; };
+		465A6BF424DC4CD100299B78 /* CalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BF324DC4CD100299B78 /* CalcView.swift */; };
+		465A6BF824DDA12B00299B78 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BF724DDA12B00299B78 /* CountDownTimer.swift */; };
+		465A6C7A24E0465500299B78 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6C7924E0465500299B78 /* SettingView.swift */; };
+		465A6C7C24E04BC600299B78 /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6C7B24E04BC600299B78 /* ShareData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		463F758624EC9B1A008F6CC4 /* HiitTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiitTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		463F758924EC9B1A008F6CC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		463F758B24EC9B1A008F6CC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		463F758E24EC9B1A008F6CC4 /* HiitTimer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HiitTimer.xcdatamodel; sourceTree = "<group>"; };
-		463F759024EC9B1A008F6CC4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		463F759224EC9B1C008F6CC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		463F759524EC9B1C008F6CC4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		463F759824EC9B1C008F6CC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		463F759A24EC9B1C008F6CC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4650902024ED6B610083021D /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
-		4650902224ED6DAB0083021D /* TimerEntity+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerEntity+Extension.swift"; sourceTree = "<group>"; };
-		4650902524ED6F600083021D /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		465A6BDA24DC4A5700299B78 /* HiitTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiitTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		465A6BDD24DC4A5700299B78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		465A6BDF24DC4A5700299B78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		465A6BE124DC4A5700299B78 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		465A6BE324DC4A5C00299B78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		465A6BE624DC4A5C00299B78 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		465A6BE924DC4A5C00299B78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		465A6BEB24DC4A5C00299B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		465A6BF124DC4C7400299B78 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		465A6BF324DC4CD100299B78 /* CalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcView.swift; sourceTree = "<group>"; };
+		465A6BF724DDA12B00299B78 /* CountDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
+		465A6C7924E0465500299B78 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		465A6C7B24E04BC600299B78 /* ShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		463F758324EC9B1A008F6CC4 /* Frameworks */ = {
+		465A6BD724DC4A5700299B78 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,66 +47,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		463F757D24EC9B1A008F6CC4 = {
+		465A6BD124DC4A5700299B78 = {
 			isa = PBXGroup;
 			children = (
-				4650902424ED6DC30083021D /* Extension */,
-				463F758824EC9B1A008F6CC4 /* HiitTimer */,
-				463F758724EC9B1A008F6CC4 /* Products */,
+				465A6BDC24DC4A5700299B78 /* HiitTimer */,
+				465A6BDB24DC4A5700299B78 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		463F758724EC9B1A008F6CC4 /* Products */ = {
+		465A6BDB24DC4A5700299B78 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				463F758624EC9B1A008F6CC4 /* HiitTimer.app */,
+				465A6BDA24DC4A5700299B78 /* HiitTimer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		463F758824EC9B1A008F6CC4 /* HiitTimer */ = {
+		465A6BDC24DC4A5700299B78 /* HiitTimer */ = {
 			isa = PBXGroup;
 			children = (
-				463F758924EC9B1A008F6CC4 /* AppDelegate.swift */,
-				463F758B24EC9B1A008F6CC4 /* SceneDelegate.swift */,
-				463F759024EC9B1A008F6CC4 /* ContentView.swift */,
-				4650902024ED6B610083021D /* SettingView.swift */,
-				4650902524ED6F600083021D /* TimerView.swift */,
-				463F759224EC9B1C008F6CC4 /* Assets.xcassets */,
-				463F759724EC9B1C008F6CC4 /* LaunchScreen.storyboard */,
-				463F759A24EC9B1C008F6CC4 /* Info.plist */,
-				463F758D24EC9B1A008F6CC4 /* HiitTimer.xcdatamodeld */,
-				463F759424EC9B1C008F6CC4 /* Preview Content */,
+				465A6BDD24DC4A5700299B78 /* AppDelegate.swift */,
+				465A6BDF24DC4A5700299B78 /* SceneDelegate.swift */,
+				465A6BE124DC4A5700299B78 /* ContentView.swift */,
+				465A6C7924E0465500299B78 /* SettingView.swift */,
+				465A6C7B24E04BC600299B78 /* ShareData.swift */,
+				465A6BF724DDA12B00299B78 /* CountDownTimer.swift */,
+				465A6BF124DC4C7400299B78 /* TimerView.swift */,
+				465A6BF324DC4CD100299B78 /* CalcView.swift */,
+				465A6BE324DC4A5C00299B78 /* Assets.xcassets */,
+				465A6BE824DC4A5C00299B78 /* LaunchScreen.storyboard */,
+				465A6BEB24DC4A5C00299B78 /* Info.plist */,
+				465A6BE524DC4A5C00299B78 /* Preview Content */,
 			);
 			path = HiitTimer;
 			sourceTree = "<group>";
 		};
-		463F759424EC9B1C008F6CC4 /* Preview Content */ = {
+		465A6BE524DC4A5C00299B78 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				463F759524EC9B1C008F6CC4 /* Preview Assets.xcassets */,
+				465A6BE624DC4A5C00299B78 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		4650902424ED6DC30083021D /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				4650902224ED6DAB0083021D /* TimerEntity+Extension.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		463F758524EC9B1A008F6CC4 /* HiitTimer */ = {
+		465A6BD924DC4A5700299B78 /* HiitTimer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 463F759D24EC9B1C008F6CC4 /* Build configuration list for PBXNativeTarget "HiitTimer" */;
+			buildConfigurationList = 465A6BEE24DC4A5C00299B78 /* Build configuration list for PBXNativeTarget "HiitTimer" */;
 			buildPhases = (
-				463F758224EC9B1A008F6CC4 /* Sources */,
-				463F758324EC9B1A008F6CC4 /* Frameworks */,
-				463F758424EC9B1A008F6CC4 /* Resources */,
+				465A6BD624DC4A5700299B78 /* Sources */,
+				465A6BD724DC4A5700299B78 /* Frameworks */,
+				465A6BD824DC4A5700299B78 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -112,25 +107,25 @@
 			);
 			name = HiitTimer;
 			productName = HiitTimer;
-			productReference = 463F758624EC9B1A008F6CC4 /* HiitTimer.app */;
+			productReference = 465A6BDA24DC4A5700299B78 /* HiitTimer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		463F757E24EC9B1A008F6CC4 /* Project object */ = {
+		465A6BD224DC4A5700299B78 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "がり";
 				TargetAttributes = {
-					463F758524EC9B1A008F6CC4 = {
+					465A6BD924DC4A5700299B78 = {
 						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
-			buildConfigurationList = 463F758124EC9B1A008F6CC4 /* Build configuration list for PBXProject "HiitTimer" */;
+			buildConfigurationList = 465A6BD524DC4A5700299B78 /* Build configuration list for PBXProject "HiitTimer" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -138,51 +133,52 @@
 				en,
 				Base,
 			);
-			mainGroup = 463F757D24EC9B1A008F6CC4;
-			productRefGroup = 463F758724EC9B1A008F6CC4 /* Products */;
+			mainGroup = 465A6BD124DC4A5700299B78;
+			productRefGroup = 465A6BDB24DC4A5700299B78 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				463F758524EC9B1A008F6CC4 /* HiitTimer */,
+				465A6BD924DC4A5700299B78 /* HiitTimer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		463F758424EC9B1A008F6CC4 /* Resources */ = {
+		465A6BD824DC4A5700299B78 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				463F759924EC9B1C008F6CC4 /* LaunchScreen.storyboard in Resources */,
-				463F759624EC9B1C008F6CC4 /* Preview Assets.xcassets in Resources */,
-				463F759324EC9B1C008F6CC4 /* Assets.xcassets in Resources */,
+				465A6BEA24DC4A5C00299B78 /* LaunchScreen.storyboard in Resources */,
+				465A6BE724DC4A5C00299B78 /* Preview Assets.xcassets in Resources */,
+				465A6BE424DC4A5C00299B78 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		463F758224EC9B1A008F6CC4 /* Sources */ = {
+		465A6BD624DC4A5700299B78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4650902624ED6F600083021D /* TimerView.swift in Sources */,
-				4650902324ED6DAB0083021D /* TimerEntity+Extension.swift in Sources */,
-				463F758A24EC9B1A008F6CC4 /* AppDelegate.swift in Sources */,
-				4650902124ED6B610083021D /* SettingView.swift in Sources */,
-				463F758C24EC9B1A008F6CC4 /* SceneDelegate.swift in Sources */,
-				463F759124EC9B1A008F6CC4 /* ContentView.swift in Sources */,
-				463F758F24EC9B1A008F6CC4 /* HiitTimer.xcdatamodeld in Sources */,
+				465A6BDE24DC4A5700299B78 /* AppDelegate.swift in Sources */,
+				465A6BE024DC4A5700299B78 /* SceneDelegate.swift in Sources */,
+				465A6BF224DC4C7400299B78 /* TimerView.swift in Sources */,
+				465A6C7A24E0465500299B78 /* SettingView.swift in Sources */,
+				465A6BF824DDA12B00299B78 /* CountDownTimer.swift in Sources */,
+				465A6BF424DC4CD100299B78 /* CalcView.swift in Sources */,
+				465A6BE224DC4A5700299B78 /* ContentView.swift in Sources */,
+				465A6C7C24E04BC600299B78 /* ShareData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		463F759724EC9B1C008F6CC4 /* LaunchScreen.storyboard */ = {
+		465A6BE824DC4A5C00299B78 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				463F759824EC9B1C008F6CC4 /* Base */,
+				465A6BE924DC4A5C00299B78 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -190,7 +186,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		463F759B24EC9B1C008F6CC4 /* Debug */ = {
+		465A6BEC24DC4A5C00299B78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -250,7 +246,7 @@
 			};
 			name = Debug;
 		};
-		463F759C24EC9B1C008F6CC4 /* Release */ = {
+		465A6BED24DC4A5C00299B78 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -304,7 +300,7 @@
 			};
 			name = Release;
 		};
-		463F759E24EC9B1C008F6CC4 /* Debug */ = {
+		465A6BEF24DC4A5C00299B78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -324,7 +320,7 @@
 			};
 			name = Debug;
 		};
-		463F759F24EC9B1C008F6CC4 /* Release */ = {
+		465A6BF024DC4A5C00299B78 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -347,38 +343,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		463F758124EC9B1A008F6CC4 /* Build configuration list for PBXProject "HiitTimer" */ = {
+		465A6BD524DC4A5700299B78 /* Build configuration list for PBXProject "HiitTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				463F759B24EC9B1C008F6CC4 /* Debug */,
-				463F759C24EC9B1C008F6CC4 /* Release */,
+				465A6BEC24DC4A5C00299B78 /* Debug */,
+				465A6BED24DC4A5C00299B78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		463F759D24EC9B1C008F6CC4 /* Build configuration list for PBXNativeTarget "HiitTimer" */ = {
+		465A6BEE24DC4A5C00299B78 /* Build configuration list for PBXNativeTarget "HiitTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				463F759E24EC9B1C008F6CC4 /* Debug */,
-				463F759F24EC9B1C008F6CC4 /* Release */,
+				465A6BEF24DC4A5C00299B78 /* Debug */,
+				465A6BF024DC4A5C00299B78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		463F758D24EC9B1A008F6CC4 /* HiitTimer.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				463F758E24EC9B1A008F6CC4 /* HiitTimer.xcdatamodel */,
-			);
-			currentVersion = 463F758E24EC9B1A008F6CC4 /* HiitTimer.xcdatamodel */;
-			path = HiitTimer.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = 463F757E24EC9B1A008F6CC4 /* Project object */;
+	rootObject = 465A6BD224DC4A5700299B78 /* Project object */;
 }
