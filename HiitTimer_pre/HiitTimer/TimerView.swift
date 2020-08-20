@@ -12,8 +12,12 @@ struct TimerView: View {
     // 共有のデータを保持する
     @EnvironmentObject var shareData: ShareData
     
+   // @State var training: Int16
+   // @State var interval: Int16
+   // @State var numOfTimes: Int16
+    
     // CountDownTimerのインスタンスを作成
-    @ObservedObject var countdowntimer = CountDownTimer(20, 10, 2)
+    @ObservedObject var countdowntimer = CountDownTimer(20, 10, 8)
     
     // モーダルビューを表示するための変数を定義
     @State var isModal: Bool = false
@@ -22,7 +26,7 @@ struct TimerView: View {
     var body: some View {
         VStack {
             Text(countdowntimer.isTimer ? "Training" : "Interval")
-            
+          /*
             // タイマーを表示
             ZStack {
                 // 数字をタップするとモーダルビューが表示される
@@ -60,32 +64,8 @@ struct TimerView: View {
                     .padding()
             }
             
-            HStack {
-                // スタートボタン
-                Button(action: {
-                    self.countdowntimer.start()
-                }) {
-                    Image(systemName: "play")
-                }.padding()
-                
-                // 一時停止ボタン
-                Button(action: {
-                    self.countdowntimer.stop()
-                }) {
-                    Image(systemName: "pause")
-                }.padding()
-                
-                // 中断ボタン
-                Button(action: {
-                    self.countdowntimer.reset(
-                        self.shareData.TIMES[self.shareData.selectTime],
-                        self.shareData.INTERVALS[self.shareData.selectInterval],
-                        self.shareData.NUMBEROFTIMES[self.shareData.selectNumOfTimes]
-                    )
-                }) {Image(systemName: "backward.end")}.padding()
-            }.frame(width: 200)
-        
-        }.font(.largeTitle)
+            
+        }
         // タイマーが0になったら、アラートを表示する
         // アラートのOKボタンを押すと、countdowntimerのresetメソッドを実行
         .alert(isPresented: $countdowntimer.isEnd, content: {
@@ -98,6 +78,7 @@ struct TimerView: View {
                 })
             ) // Alert
         }) // alert
+             */}
     } // body
 } // struct
 
@@ -105,6 +86,6 @@ struct TimerView: View {
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         TimerView()
-        .environmentObject(ShareData())
+            .environmentObject(ShareData())
     }
 }

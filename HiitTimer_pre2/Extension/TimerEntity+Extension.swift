@@ -80,7 +80,7 @@ extension TimerEntity{
     }
     
     
-    /*static func counts(in managedObjectContext: NSManagedObjectContext,
+    static func counts(in managedObjectContext: NSManagedObjectContext,
                        category: Category,
                        task: String,
                        time: Date? = Date()){

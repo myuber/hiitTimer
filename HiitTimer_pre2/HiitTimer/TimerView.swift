@@ -11,13 +11,12 @@ import SwiftUI
 struct TimerView: View {
     var isTimer: Bool = true
     @State var isModal = false
-    
     @ObservedObject var timeCounter: TimerEntity
     
     var body: some View {
-        Text("\(self.timeCounter.training)")
-        /*VStack {
-            Text(isTimer ? "Training" : "Interval")
+        VStack {
+            Text("\(self.timeCounter.training)")
+            /*Text(isTimer ? "Training" : "Interval")
             
             // タイマーを表示
             ZStack {
@@ -53,22 +52,22 @@ struct TimerView: View {
                 .rotationEffect(Angle(degrees: -90))
                 .padding()
         }
-            
-        HStack {
-            // スタートボタン
-            Button(action: {}) {
-                Image(systemName: "play")
-            }.padding()
-            
-            // 一時停止ボタン
-            Button(action: {}) {
-                Image(systemName: "pause")
-            }.padding()
-            
-            // 中断ボタン
-            Button(action: {}) {Image(systemName: "backward.end")}.padding()
-        }.frame(width: 200)
         */
+            HStack {
+                // スタートボタン
+                Button(action: {}) {
+                    Image(systemName: "play")
+                }.padding()
+                
+                // 一時停止ボタン
+                Button(action: {}) {
+                    Image(systemName: "pause")
+                }.padding()
+                
+                // 中断ボタン
+                Button(action: {}) {Image(systemName: "backward.end")}.padding()
+            }.frame(width: 200)
+        }
     } // body
 } // struct
 
