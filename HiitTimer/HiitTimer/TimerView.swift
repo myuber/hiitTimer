@@ -12,8 +12,10 @@ struct TimerView: View {
     var isTimer: Bool = true
     @State var isModal = false
     
+    @ObservedObject var timeCounter: TimerEntity
+    
     var body: some View {
-        Text("Hello world")
+        Text("\(self.timeCounter.training)")
         /*VStack {
             Text(isTimer ? "Training" : "Interval")
             
@@ -74,6 +76,15 @@ struct TimerView: View {
     
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView()
+        let context = (UIApplication.shared.delegate as! AppDelegate)
+            .persistentContainer.viewContext
+        
+        let newTimer = TimerEntity(context: context)
+        newTimer.training = 1
+        newTimer.interval = 0
+        newTimer.numOfTimes = 8
+        newTimer.isEnd = false
+        
+        return TimerView(timeCounter: newTimer)
     }
 }
