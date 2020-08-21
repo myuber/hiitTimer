@@ -11,11 +11,12 @@ import SwiftUI
 struct TimerController: View {
     // 共有のデータを保持する
     @EnvironmentObject var shareData: ShareData
-    @EnvironmentObject var countdowntimer: CountDownTimer
+    @ObservedObject var countdowntimer: CountDownTimer
     
     var body: some View {
-        VStack{
-            Text(countdowntimer.isTimer ? "Training" : "Interval")
+        VStack{            
+            Text("\(self.countdowntimer.counter)")
+            Text(self.countdowntimer.isEnd ? "true" : "false")
             
             HStack {
                 // スタートボタン
@@ -47,8 +48,11 @@ struct TimerController: View {
 
 
 struct TimerController_Previews: PreviewProvider {
+    static var cdt = CountDownTimer(5, 10, 8)
+    
     static var previews: some View {
-        TimerController()
+        
+        TimerController(countdowntimer: cdt)
             .environmentObject(ShareData())
     }
 }

@@ -18,12 +18,6 @@ class CountDownTimer: ObservableObject {
     // アラートを出現させるために、タイマーの終了を格納する変数
     @Published var isEnd: Bool = false
     
-    // タイマーのコピーを作成
-    var counterCopy: Int = 0
-    var intervalCopy: Int = 0
-    
-    // タイマーをtrainig/intervalを判定するための変数を定義
-    @Published var isTimer: Bool = true
     
     init(_ countNum: Int, _ intervalNum: Int, _ timesNum: Int){
         self.counter = countNum
@@ -46,27 +40,16 @@ class CountDownTimer: ObservableObject {
             }
         }
         
-        
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {_ in
-            while self.numOfTimes > 0 {
-                self.counterCopy = self.counter
-                self.intervalCopy = self.interval
-                // 0になるまでカウントダウンする
-                while self.counterCopy > 0 {
-                    self.counterCopy -= 1
-                }
-                self.isTimer = false
-                // 0になるまでインターバルを数える
-                while self.intervalCopy > 0 {
-                    self.intervalCopy -= 1
-                }
-                self.numOfTimes -= 1
-                if self.numOfTimes <= 0{
-                    self.isEnd = true
-                    break
-                }
-                self.isTimer = true
+            // 0になるまでカウントダウンする
+            self.counter -= 1
+            
+            if self.counter <= 0 {
+                self.isEnd = true
+                self.stop()
             }
+            
+            
         }
     }
 
