@@ -11,7 +11,7 @@ import SwiftUI
 struct SettingView: View {
     // 共有できるデータを保持
     @EnvironmentObject var shareData: ShareData
-    
+        
     var body: some View {
         ZStack{
             
@@ -25,16 +25,18 @@ struct SettingView: View {
                     .padding()
                     , alignment: .top )
             VStack {
-                Spacer()
 
                 Text("TRAINING TIME")
                     .font(.title)
-                Text("\(shareData.selectTime)")
+                    .fontWeight(.medium)
+                    .foregroundColor(Color.blue)
+                    .padding(.top, 100.0)
                 Picker(selection: $shareData.selectTime, label: Text("TIME SELECT")) {
                     ForEach(0..<self.shareData.TIMES.count) { index in
                         Text("\(self.shareData.TIMES[index])").tag(index)
                     }
                 }.frame(width: 200)
+                
                 
                 // 区切り線
                 Divider()
@@ -61,7 +63,7 @@ struct SettingView: View {
                         Text("\(self.shareData.NUMBEROFTIMES[index])").tag(index)
                     }
                 }.frame(width: 200)
-                
+                Spacer()
             }
         }
     }
