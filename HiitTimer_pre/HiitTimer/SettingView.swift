@@ -12,58 +12,34 @@ struct SettingView: View {
     // 共有できるデータを保持
     @EnvironmentObject var shareData: ShareData
     
+    // モーダルビューの閉じるボタン
+    @Environment(\.presentationMode) var presentaionMode
+        
     var body: some View {
-        ZStack{
+        Form {
             
-            // 背景
-            Color(red: 0.9, green: 0.9, blue: 0.8)
-                .edgesIgnoringSafeArea(.all)
-                .overlay( Capsule()
-                    .foregroundColor(.black)
-                    .opacity(0.2)
-                    .frame(width: 100, height: 8)
-                    .padding()
-                    , alignment: .top )
-            VStack {
-                Spacer()
-
-                Text("TRAINING TIME")
-                    .font(.title)
-                Text("\(shareData.selectTime)")
-                Picker(selection: $shareData.selectTime, label: Text("TIME SELECT")) {
+            Section(header: Text("運動時間を変更する")){
+                Picker(selection: $shareData.selectTime, label: Text("運動")) {
                     ForEach(0..<self.shareData.TIMES.count) { index in
-                        Text("\(self.shareData.TIMES[index])").tag(index)
+                        Text("\(self.shareData.TIMES[index])秒").tag(index)
                     }
-                }.frame(width: 200)
-                
-                // 区切り線
-                Divider()
-                
-                Text("INTERVAL TIME")
-                    .font(.title)
-                    .fontWeight(.medium)
-                    .foregroundColor(Color.blue)
-                Picker(selection: $shareData.selectInterval, label: Text("INTERVAL SELECT")) {
-                    ForEach(0..<self.shareData.INTERVALS.count) { index in
-                        Text("\(self.shareData.INTERVALS[index])").tag(index)
-                    }
-                }.frame(width: 200)
-                
-                // 区切り線
-                Divider()
-                
-                Text("NUMBER OF TIMES")
-                    .font(.title)
-                    .fontWeight(.medium)
-                    .foregroundColor(Color.blue)
-                Picker(selection: $shareData.selectNumOfTimes, label: Text("NUMBER OF TIMES SELECT")) {
-                    ForEach(0..<self.shareData.NUMBEROFTIMES.count) { index in
-                        Text("\(self.shareData.NUMBEROFTIMES[index])").tag(index)
-                    }
-                }.frame(width: 200)
-                
+                }
             }
-        }
+            Section(header: Text("インターバルを変更する")){
+                Picker(selection: $shareData.selectInterval, label: Text("休憩")) {
+                    ForEach(0..<self.shareData.INTERVALS.count) { index in
+                        Text("\(self.shareData.INTERVALS[index])秒").tag(index)
+                    }
+                }
+            }
+            Section(header: Text("セット数を変更する")){
+                Picker(selection: $shareData.selectNumOfTimes, label: Text("繰り返し回数")) {
+                    ForEach(0..<self.shareData.NUMBEROFTIMES.count) { index in
+                        Text("\(self.shareData.NUMBEROFTIMES[index])セット").tag(index)
+                    }
+                }
+            }
+        }.navigationBarTitle("タイマーの設定")
     }
 }
 

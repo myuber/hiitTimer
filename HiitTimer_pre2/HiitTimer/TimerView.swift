@@ -11,11 +11,12 @@ import SwiftUI
 struct TimerView: View {
     var isTimer: Bool = true
     @State var isModal = false
+    @ObservedObject var timeCounter: TimerEntity
     
     var body: some View {
-        Text("Hello world")
-        /*VStack {
-            Text(isTimer ? "Training" : "Interval")
+        VStack {
+            Text("\(self.timeCounter.training)")
+            /*Text(isTimer ? "Training" : "Interval")
             
             // タイマーを表示
             ZStack {
@@ -51,22 +52,22 @@ struct TimerView: View {
                 .rotationEffect(Angle(degrees: -90))
                 .padding()
         }
-            
-        HStack {
-            // スタートボタン
-            Button(action: {}) {
-                Image(systemName: "play")
-            }.padding()
-            
-            // 一時停止ボタン
-            Button(action: {}) {
-                Image(systemName: "pause")
-            }.padding()
-            
-            // 中断ボタン
-            Button(action: {}) {Image(systemName: "backward.end")}.padding()
-        }.frame(width: 200)
         */
+            HStack {
+                // スタートボタン
+                Button(action: {}) {
+                    Image(systemName: "play")
+                }.padding()
+                
+                // 一時停止ボタン
+                Button(action: {}) {
+                    Image(systemName: "pause")
+                }.padding()
+                
+                // 中断ボタン
+                Button(action: {}) {Image(systemName: "backward.end")}.padding()
+            }.frame(width: 200)
+        }
     } // body
 } // struct
 
@@ -74,6 +75,15 @@ struct TimerView: View {
     
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView()
+        let context = (UIApplication.shared.delegate as! AppDelegate)
+            .persistentContainer.viewContext
+        
+        let newTimer = TimerEntity(context: context)
+        newTimer.training = 1
+        newTimer.interval = 0
+        newTimer.numOfTimes = 8
+        newTimer.isEnd = false
+        
+        return TimerView(timeCounter: newTimer)
     }
 }
