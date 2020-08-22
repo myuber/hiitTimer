@@ -27,46 +27,40 @@ struct TimerView: View {
     }
     
     var body: some View {
-        VStack {
-            // タイマーを表示
-            ZStack {
-                // 数字をタップするとモーダルビューが表示される
-                Button(action: {
-                    self.isModal = true
-                }) {
-                    VStack {
-                        Text("\(self.countdowntimer.counter)")
+        NavigationView{
+            VStack {
+                // タイマーを表示
+                ZStack {
+                    // 数字をタップするとモーダルビューが表示される
+                    NavigationLink(destination: SettingView()){
+                        VStack {
+                            Text("\(self.countdowntimer.counter)")
                             .font(.largeTitle)
                             .padding()
-                        Text("\(self.countdowntimer.interval)")
-                            .font(.largeTitle)
+                            
+                            Text("\(self.countdowntimer.interval)")
+                                .font(.largeTitle)
+                        }
                     }
-                }
-                .sheet(isPresented: $isModal, onDismiss: {self.TimerReset()}) {
-                    SettingView().environmentObject(self.shareData)
-                }
+                    // 残り時間を表示するサークルビューを描画
+                    TimerCircle(countdowntimer: self.countdowntimer)
+                    
+                } // ZStack
                 
-                // 残り時間を表示するサークルビューを描画
-                TimerCircle(countdowntimer: self.countdowntimer)
+                // タイマーを操作するコントローラービューを描画
+                TimerController(countdowntimer: self.countdowntimer)
+            } //VStack
                 
-            } // ZStack
-            
-            // タイマーを操作するコントローラービューを描画
-            TimerController(countdowntimer: self.countdowntimer)
-        } //VStack
-            
-        // タイマーが0になったら、アラートを表示する
-        // アラートのOKボタンを押すと、countdowntimerのresetメソッドを実行
-        .alert(isPresented: $countdowntimer.isEnd, content: {
-            Alert(title: Text("タイマー終了"), message: Text("お疲れ様でした"), dismissButton: .default(Text("OK"), action: {
-                self.TimerReset()
-                })
-            ) // Alert
-        }) // alert
-        .onAppear{
-            self.TimerReset()
-        }
-        
+            // タイマーが0になったら、アラートを表示する
+            // アラートのOKボタンを押すと、countdowntimerのresetメソッドを実行
+            .alert(isPresented: $countdowntimer.isEnd, content: {
+                Alert(title: Text("タイマー終了"), message: Text("お疲れ様でした"), dismissButton: .default(Text("OK"), action: {
+                    self.TimerReset()
+                    })
+                ) // Alert
+            }) // alert
+            .onAppear{self.TimerReset()}
+        } // NavigationView
     } // body
 } // struct
 
