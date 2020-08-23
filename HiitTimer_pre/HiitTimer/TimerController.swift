@@ -14,10 +14,7 @@ struct TimerController: View {
     @ObservedObject var countdowntimer: CountDownTimer
     
     var body: some View {
-        VStack{            
-            Text("\(self.countdowntimer.counter)")
-            Text(self.countdowntimer.isEnd ? "true" : "false")
-            
+        VStack{
             HStack {
                 // スタートボタン
                 Button(action: {
