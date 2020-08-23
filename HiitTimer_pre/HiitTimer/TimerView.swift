@@ -24,22 +24,38 @@ struct TimerView: View {
             Int(self.shareData.INTERVALS[Int(self.shareData.selectInterval)]),
             Int(self.shareData.NUMBEROFTIMES[Int(self.shareData.selectNumOfTimes)])
         )
+        self.countdowntimer.numOfTimesCopy = self.countdowntimer.numOfTimes
     }
     
     var body: some View {
         NavigationView{
             VStack {
+                SettingCheckView(countdowntimer: self.countdowntimer)
                 // タイマーを表示
                 ZStack {
                     // 数字をタップするとモーダルビューが表示される
                     NavigationLink(destination: SettingView()){
                         VStack {
-                            Text("\(self.countdowntimer.counter)")
+                            Text("\(self.countdowntimer.isCounter ? self.countdowntimer.counterCopy : self.countdowntimer.intervalCopy)")
                             .font(.largeTitle)
-                            .padding()
+                                .padding(.bottom, 10)
                             
-                            Text("\(self.countdowntimer.interval)")
-                                .font(.largeTitle)
+                            HStack(alignment: .bottom){
+                                Text("残りセット：")
+                                    .font(.headline)
+                                    .foregroundColor(Color.white)
+                                Text("\(self.countdowntimer.numOfTimesCopy)")
+                                    .font(.title)
+                                    .padding(.bottom, -3.0)
+                                .foregroundColor(Color.white)
+                                    
+                                Text("/ \(self.countdowntimer.numOfTimes)")
+                                .font(.headline)
+                                .foregroundColor(Color.white)
+                            }
+                            .padding([.top, .bottom], 10)
+                            .padding([.leading, .trailing], 20.0)
+                            .background(Color(.systemOrange))
                         }
                     }
                     // 残り時間を表示するサークルビューを描画

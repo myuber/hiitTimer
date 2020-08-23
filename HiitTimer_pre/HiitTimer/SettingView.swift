@@ -12,12 +12,9 @@ struct SettingView: View {
     // 共有できるデータを保持
     @EnvironmentObject var shareData: ShareData
     
-    // モーダルビューの閉じるボタン
-    @Environment(\.presentationMode) var presentaionMode
         
     var body: some View {
         Form {
-            
             Section(header: Text("運動時間を変更する")){
                 Picker(selection: $shareData.selectTime, label: Text("運動")) {
                     ForEach(0..<self.shareData.TIMES.count) { index in
