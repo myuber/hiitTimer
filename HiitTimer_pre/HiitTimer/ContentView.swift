@@ -22,7 +22,7 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image("first")
-                        Text("First")
+                        Text("Hiitタイマー")
                     }
                 }
                 .tag(0)
@@ -31,7 +31,7 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image("second")
-                        Text("Second")
+                        Text("TDEE計算")
                     }
                 }
                 .tag(1)
