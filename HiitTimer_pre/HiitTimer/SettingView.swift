@@ -15,6 +15,7 @@ struct SettingView: View {
         
     var body: some View {
         Form {
+            
             Section(header: Text("運動時間を変更する")){
                 Picker(selection: $shareData.selectTime, label: Text("運動")) {
                     ForEach(0..<self.shareData.TIMES.count) { index in
@@ -22,6 +23,7 @@ struct SettingView: View {
                     }
                 }
             }
+            
             Section(header: Text("インターバルを変更する")){
                 Picker(selection: $shareData.selectInterval, label: Text("休憩")) {
                     ForEach(0..<self.shareData.INTERVALS.count) { index in
@@ -29,6 +31,7 @@ struct SettingView: View {
                     }
                 }
             }
+            
             Section(header: Text("セット数を変更する")){
                 Picker(selection: $shareData.selectNumOfTimes, label: Text("繰り返し回数")) {
                     ForEach(0..<self.shareData.NUMBEROFTIMES.count) { index in
@@ -36,7 +39,8 @@ struct SettingView: View {
                     }
                 }
             }
-        }.navigationBarTitle("タイマーの設定")
+            
+        }
     }
 }
 

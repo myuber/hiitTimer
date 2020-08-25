@@ -14,22 +14,33 @@ struct TimerController: View {
     @ObservedObject var countdowntimer: CountDownTimer
     
     var body: some View {
-        VStack{
+        VStack {
+            // スタートボタン
+            Button(action: {
+                self.countdowntimer.start()
+            }) {
+                Image(systemName: "play")
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    .foregroundColor(.white)
+                }
+                .frame(width: 210, height: 60)
+                .background(Color(.systemPink))
+            
             HStack {
-                // スタートボタン
-                Button(action: {
-                    self.countdowntimer.start()
-                }) {
-                    Image(systemName: "play")
-                }.padding()
-                
                 // 一時停止ボタン
                 Button(action: {
                     self.countdowntimer.stop()
                 }) {
                     Image(systemName: "pause")
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    .foregroundColor(.white)
                 }.padding()
+                .frame(width: 100, height: 60)
+                .background(Color(.systemGray))
                 
+                Spacer().frame(width:10)
                 // 中断ボタン
                 Button(action: {
                     self.countdowntimer.reset(
@@ -37,7 +48,14 @@ struct TimerController: View {
                         Int(self.shareData.INTERVALS[Int(self.shareData.selectInterval)]),
                         Int(self.shareData.NUMBEROFTIMES[Int(self.shareData.selectNumOfTimes)])
                     )
-                }) {Image(systemName: "backward.end")}.padding()
+                }) {
+                    Image(systemName: "backward.end")
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    .foregroundColor(.white)
+                }.padding()
+                .frame(width: 100, height: 60)
+                .background(Color(.systemGray))
             }
         }
     }

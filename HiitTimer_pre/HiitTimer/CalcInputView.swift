@@ -16,7 +16,7 @@ struct CalcInputView: View {
         Form{
             // 年齢
             Section(header: Text("年齢を入力してください")){
-                Picker(selection: $shareData.useAge, label: Text("年齢")) {
+                Picker(selection: $shareData.userAge, label: Text("年齢")) {
                     ForEach(0..<100) { index in
                         Text("\(index)歳").tag(index)
                     }
@@ -24,37 +24,34 @@ struct CalcInputView: View {
             }
             // 性別
             Section(header: Text("性別を入力してください")){
-                Picker(selection: $shareData.useAge, label: Text("性別")) {
-                    ForEach(0..<100) { index in
-                        Text("\(index)歳").tag(index)
-                    }
+                Picker(selection: $shareData.userGender, label: Text("性別")) {
+                    Text("女性").tag("female")
+                    Text("男性").tag("male")
                 }
             }
             
             // 体重と身長
             Section(header: Text("体重と年齢を入力してください")){
-                Picker(selection: $shareData.useAge, label: Text("体重")) {
-                    ForEach(0..<100) { index in
-                        Text("\(index)歳").tag(index)
+                Picker(selection: $shareData.userWeight, label: Text("体重")) {
+                    ForEach(30..<150) { index in
+                        Text("\(index)kg").tag(index)
                     }
                 }
-                Picker(selection: $shareData.useAge, label: Text("年齢")) {
-                    ForEach(0..<100) { index in
-                        Text("\(index)歳").tag(index)
+                Picker(selection: $shareData.userHeight, label: Text("身長")) {
+                    ForEach(130..<200) { index in
+                        Text("\(index)cm").tag(index)
                     }
                 }
             }
             
             // 運動強度
             Section(header: Text("1週間の運動量を入力してください")){
-                Picker(selection: $shareData.useAge, label: Text("運動レベル")) {
+                Picker(selection: $shareData.userAge, label: Text("運動レベル")) {
                     ForEach(0..<100) { index in
                         Text("\(index)歳").tag(index)
                     }
                 }
             }
-            
-            
         }
     }
 }
