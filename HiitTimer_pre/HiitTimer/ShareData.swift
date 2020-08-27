@@ -20,10 +20,5 @@ class ShareData: ObservableObject {
     @Published var NUMBEROFTIMES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     
     // CalcViewに使用するデータ
-    @Published var userAge = 25              //年齢
-    @Published var userHeight = 165         //身長
-    @Published var userWeight = 60          //体重
-    @Published var userGender = "Female"    //性別
-    @Published var userExercise = 0         //運動強度
-    
+    @Published var userBMR = 0              //基礎代謝
 }

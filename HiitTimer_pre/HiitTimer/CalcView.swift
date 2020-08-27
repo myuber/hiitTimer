@@ -18,10 +18,7 @@ struct CalcView: View {
                 NavigationLink(destination: CalcInputView()){
                     Text("TDEE計算ページ")
                 }
-                Text("年齢\(self.shareData.userAge)")
-                Text("性別\(self.shareData.userGender)")
-                Text("体重\(self.shareData.userWeight)")
-                Text("身長\(self.shareData.userHeight)")
+                Text("基礎代謝\(self.shareData.userBMR)")
             }
         }
     }
