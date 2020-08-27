@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		464007AC24EF3B12009204AA /* TimerCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464007AB24EF3B12009204AA /* TimerCircle.swift */; };
 		464007AE24F277A4009204AA /* SettingCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464007AD24F277A4009204AA /* SettingCheckView.swift */; };
+		464007B024F32F31009204AA /* CalcInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464007AF24F32F31009204AA /* CalcInputView.swift */; };
 		4650902824EEBEC90083021D /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4650902724EEBEC90083021D /* TimerController.swift */; };
 		465A6BDE24DC4A5700299B78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BDD24DC4A5700299B78 /* AppDelegate.swift */; };
 		465A6BE024DC4A5700299B78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BDF24DC4A5700299B78 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		464007AB24EF3B12009204AA /* TimerCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCircle.swift; sourceTree = "<group>"; };
 		464007AD24F277A4009204AA /* SettingCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCheckView.swift; sourceTree = "<group>"; };
+		464007AF24F32F31009204AA /* CalcInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcInputView.swift; sourceTree = "<group>"; };
 		4650902724EEBEC90083021D /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		465A6BDA24DC4A5700299B78 /* HiitTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiitTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		465A6BDD24DC4A5700299B78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,8 +83,9 @@
 				465A6BF124DC4C7400299B78 /* TimerView.swift */,
 				4650902724EEBEC90083021D /* TimerController.swift */,
 				464007AB24EF3B12009204AA /* TimerCircle.swift */,
-				465A6BF324DC4CD100299B78 /* CalcView.swift */,
 				464007AD24F277A4009204AA /* SettingCheckView.swift */,
+				465A6BF324DC4CD100299B78 /* CalcView.swift */,
+				464007AF24F32F31009204AA /* CalcInputView.swift */,
 				465A6BE324DC4A5C00299B78 /* Assets.xcassets */,
 				465A6BE824DC4A5C00299B78 /* LaunchScreen.storyboard */,
 				465A6BEB24DC4A5C00299B78 /* Info.plist */,
@@ -178,6 +181,7 @@
 				464007AE24F277A4009204AA /* SettingCheckView.swift in Sources */,
 				465A6BF824DDA12B00299B78 /* CountDownTimer.swift in Sources */,
 				465A6BF424DC4CD100299B78 /* CalcView.swift in Sources */,
+				464007B024F32F31009204AA /* CalcInputView.swift in Sources */,
 				464007AC24EF3B12009204AA /* TimerCircle.swift in Sources */,
 				465A6BE224DC4A5700299B78 /* ContentView.swift in Sources */,
 				465A6C7C24E04BC600299B78 /* ShareData.swift in Sources */,

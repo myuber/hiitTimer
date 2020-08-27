@@ -40,7 +40,6 @@ struct SettingCheckView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 80.0)
-
     }
 }
 

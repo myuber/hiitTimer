@@ -30,34 +30,38 @@ struct TimerView: View {
     var body: some View {
         NavigationView{
             VStack {
-                SettingCheckView(countdowntimer: self.countdowntimer)
+                // 数字をタップするとモーダルビューが表示される
+                Text("時間を変更する場合はクリック")
+                    .foregroundColor(Color(.systemTeal))
+                NavigationLink(destination: SettingView()){
+                    SettingCheckView(countdowntimer: self.countdowntimer)
+                }
                 // タイマーを表示
                 ZStack {
-                    // 数字をタップするとモーダルビューが表示される
-                    NavigationLink(destination: SettingView()){
-                        VStack {
-                            Text("\(self.countdowntimer.isCounter ? self.countdowntimer.counterCopy : self.countdowntimer.intervalCopy)")
-                            .font(.largeTitle)
-                                .padding(.bottom, 10)
-                            
-                            HStack(alignment: .bottom){
-                                Text("残りセット：")
-                                    .font(.headline)
-                                    .foregroundColor(Color.white)
-                                Text("\(self.countdowntimer.numOfTimesCopy)")
-                                    .font(.title)
-                                    .padding(.bottom, -3.0)
-                                .foregroundColor(Color.white)
-                                    
-                                Text("/ \(self.countdowntimer.numOfTimes)")
+                    
+                    VStack {
+                        Text("\(self.countdowntimer.isCounter ? self.countdowntimer.counterCopy : self.countdowntimer.intervalCopy)")
+                        .font(.largeTitle)
+                            .padding(.bottom, 10)
+                        
+                        HStack(alignment: .bottom){
+                            Text("残りセット：")
                                 .font(.headline)
                                 .foregroundColor(Color.white)
-                            }
-                            .padding([.top, .bottom], 10)
-                            .padding([.leading, .trailing], 20.0)
-                            .background(Color(.systemOrange))
+                            Text("\(self.countdowntimer.numOfTimesCopy)")
+                                .font(.title)
+                                .padding(.bottom, -3.0)
+                            .foregroundColor(Color.white)
+                                
+                            Text("/ \(self.countdowntimer.numOfTimes)")
+                            .font(.headline)
+                            .foregroundColor(Color.white)
                         }
+                        .padding([.top, .bottom], 10)
+                        .padding([.leading, .trailing], 20.0)
+                        .background(Color(.systemOrange))
                     }
+                    
                     // 残り時間を表示するサークルビューを描画
                     TimerCircle(countdowntimer: self.countdowntimer)
                     
@@ -65,6 +69,9 @@ struct TimerView: View {
                 
                 // タイマーを操作するコントローラービューを描画
                 TimerController(countdowntimer: self.countdowntimer)
+                
+                Spacer()
+                
             } //VStack
                 
             // タイマーが0になったら、アラートを表示する
