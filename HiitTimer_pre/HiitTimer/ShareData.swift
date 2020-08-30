@@ -20,5 +20,6 @@ class ShareData: ObservableObject {
     @Published var NUMBEROFTIMES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     
     // CalcViewに使用するデータ
-    @Published var userBMR = 0              //基礎代謝
+    @Published var userBMR = 0 //基礎代謝
+    @Published var userTDEE = 0 //TDEE
 }

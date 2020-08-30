@@ -12,15 +12,18 @@ struct CalcView: View {
     // 共有のデータを保持する
     @EnvironmentObject var shareData: ShareData
     
+    
     var body: some View {
-        NavigationView{
+        NavigationView {
             VStack{
                 NavigationLink(destination: CalcInputView()){
                     Text("TDEE計算ページ")
                 }
-                Text("基礎代謝\(self.shareData.userBMR)")
+                Text("基礎代謝/ \(self.shareData.userBMR)")
+                Text("TDEE/ \(self.shareData.userTDEE)")
             }
         }
+        
     }
 }
 
