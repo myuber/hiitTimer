@@ -12,16 +12,14 @@ struct CalcInputView: View {
     // 共有のデータを保持する
     @EnvironmentObject var shareData: ShareData
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @State var age:Int = 25
     @State var weight:String = "60"
     @State var height:String = "160"
     @State var gender:String = "female"
     @State var exercise:Double = 1.375
     
-    /*
-     男性: 13.397 × 体重kg + 4.799 x 身長cm - 5.677 × 年齢 + 88.362
-    女性: 9.247 × 体重kg + 3.098 x 身長cm - 4.33 × 年齢 + 447.593
-     */
     
     fileprivate func TextCheck() -> Bool {
         // Intに変換できなかったらfalse
@@ -32,9 +30,10 @@ struct CalcInputView: View {
     }
     
     fileprivate func FemaleCalcTdee() -> Double {
+        let ageNum:Double = Double(age)
+        
         if let weightNum = Double(weight),
-            let heightNum = Double(height),
-            let ageNum:Double = Double(age) {
+            let heightNum = Double(height) {
                 let result = 9.247 * weightNum + 3.098 * heightNum - 4.33 * ageNum + 447.593
                 return result
                 
@@ -44,9 +43,9 @@ struct CalcInputView: View {
     }
     
     fileprivate func MaleCalcTdee() -> Double {
+        let ageNum:Double = Double(age)
         if let weightNum = Double(weight),
-            let heightNum = Double(height),
-            let ageNum:Double = Double(age) {
+            let heightNum = Double(height) {
                 let result = 13.397 * weightNum + 4.799 * heightNum - 5.677 * ageNum + 88.362
                 return result
                 
@@ -56,21 +55,20 @@ struct CalcInputView: View {
     }
     
     
+    fileprivate func CalcUserData() {
+        self.shareData.userTDEE = Int(Double(self.shareData.userBMR) * self.exercise)
+        self.shareData.userProtein = Int(Double(self.shareData.userTDEE) * 0.2 / 4) //タンパク質(TDEEの20%÷4kcal)
+        // 体脂肪を減らす際の摂取カロリー
+        self.shareData.userCarbohydrateLoseWeight = Int(Double(self.shareData.userTDEE) * 0.3 / 4) //炭水化物(TDEEの30%÷4kcal)
+        self.shareData.userLipidLoseWeight = Int(Double(self.shareData.userTDEE) * 0.3 / 9) //脂質(TDEEの30%÷9kcal)
+        // 体脂肪を維持する際の摂取カロリー
+        self.shareData.userCarbohydrateMaintainWeight = Int(Double(self.shareData.userTDEE) * 0.4 / 4) //炭水化物(TDEEの40%÷4kcal)
+        self.shareData.userLipidMaintainWeight = Int(Double(self.shareData.userTDEE) * 0.4 / 9) //脂質(TDEEの40%÷9kcal)
+    }
+    
     var body: some View {
-        NavigationView{
+        VStack{
             Form{
-                Group {
-                    if TextCheck(){
-                        if gender == "male"{
-                            Text("\(MaleCalcTdee())")
-                        } else {
-                            Text("\(FemaleCalcTdee())")
-                        }
-                    } else {
-                        Text("Int変換失敗")
-                    }
-                }
-                
                 // 年齢
                 Section(header: Text("年齢を選択してください")){
                     Picker(selection: $age, label: Text("年齢")) {
@@ -112,17 +110,29 @@ struct CalcInputView: View {
                         Text("ほぼ毎日激しい運動をしている").tag(1.9)
                     }
                 }
-            }.navigationBarItems(trailing: Button(action: {
+            }
+            
+            Spacer()
+        
+            Button(action: {
                 if self.TextCheck(){
                     if self.gender == "male"{
                         self.shareData.userBMR = Int(self.MaleCalcTdee())
+                        self.CalcUserData()
+                        
+                        self.presentationMode.wrappedValue.dismiss()
                     } else {
                         self.shareData.userBMR = Int(self.FemaleCalcTdee())
+                        self.CalcUserData()
+                        
+                        self.presentationMode.wrappedValue.dismiss()
                     }
                 }
-            }) {
+            }){
                 Text("TDEEを計算する")
-            })
+                    .font(.title)
+                
+            }
         }
     }
 }

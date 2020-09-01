@@ -27,6 +27,7 @@ struct TimerCircle: View {
             ).stroke(Color(.systemTeal), style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .bevel))
             .aspectRatio(contentMode: .fit)
             .rotationEffect(Angle(degrees: -90))
+                .animation(.linear(duration: 1)) //アニメーションを追加
             .padding()
             
             // トレーニングのプログレスバーを描画
@@ -35,6 +36,7 @@ struct TimerCircle: View {
             ).stroke(Color(.systemPink), style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .bevel))
             .aspectRatio(contentMode: .fit)
             .rotationEffect(Angle(degrees: -90))
+                .animation(.linear(duration: 1)) //アニメーションを追加
             .padding()
             
         }
