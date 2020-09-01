@@ -83,6 +83,7 @@ struct TimerView: View {
                 ) // Alert
             }) // alert
             .onAppear{self.TimerReset()}
+            .navigationBarHidden(true)
         } // NavigationView
     } // body
 } // struct

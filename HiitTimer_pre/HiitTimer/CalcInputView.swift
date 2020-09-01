@@ -55,6 +55,17 @@ struct CalcInputView: View {
     }
     
     
+    fileprivate func CalcUserData() {
+        self.shareData.userTDEE = Int(Double(self.shareData.userBMR) * self.exercise)
+        self.shareData.userProtein = Int(Double(self.shareData.userTDEE) * 0.2 / 4) //タンパク質(TDEEの20%÷4kcal)
+        // 体脂肪を減らす際の摂取カロリー
+        self.shareData.userCarbohydrateLoseWeight = Int(Double(self.shareData.userTDEE) * 0.3 / 4) //炭水化物(TDEEの30%÷4kcal)
+        self.shareData.userLipidLoseWeight = Int(Double(self.shareData.userTDEE) * 0.3 / 9) //脂質(TDEEの30%÷9kcal)
+        // 体脂肪を維持する際の摂取カロリー
+        self.shareData.userCarbohydrateMaintainWeight = Int(Double(self.shareData.userTDEE) * 0.4 / 4) //炭水化物(TDEEの40%÷4kcal)
+        self.shareData.userLipidMaintainWeight = Int(Double(self.shareData.userTDEE) * 0.4 / 9) //脂質(TDEEの40%÷9kcal)
+    }
+    
     var body: some View {
         VStack{
             Form{
@@ -107,11 +118,13 @@ struct CalcInputView: View {
                 if self.TextCheck(){
                     if self.gender == "male"{
                         self.shareData.userBMR = Int(self.MaleCalcTdee())
-                        self.shareData.userTDEE = Int(Double(self.shareData.userBMR) * self.exercise)
+                        self.CalcUserData()
+                        
                         self.presentationMode.wrappedValue.dismiss()
                     } else {
                         self.shareData.userBMR = Int(self.FemaleCalcTdee())
-                        self.shareData.userTDEE = Int(Double(self.shareData.userBMR) * self.exercise)
+                        self.CalcUserData()
+                        
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }

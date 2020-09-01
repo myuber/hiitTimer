@@ -22,4 +22,12 @@ class ShareData: ObservableObject {
     // CalcViewに使用するデータ
     @Published var userBMR = 0 //基礎代謝
     @Published var userTDEE = 0 //TDEE
+    
+    @Published var userProtein = 0 //タンパク質(TDEE÷20%÷4kcal)
+    // userLoseWeightModeがtrueならこっち
+    @Published var userCarbohydrateLoseWeight = 0 //炭水化物(TDEE÷30%÷4kcal)
+    @Published var userLipidLoseWeight = 0 //脂質(TDEE÷30%÷9kcal)
+    // userLoseWeightModeがfalseならこっち
+    @Published var userCarbohydrateMaintainWeight = 0 //炭水化物(TDEE÷40%÷4kcal)
+    @Published var userLipidMaintainWeight = 0 //脂質(TDEE÷40%÷9kcal)
 }
