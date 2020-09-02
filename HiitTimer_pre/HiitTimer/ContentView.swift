@@ -21,7 +21,7 @@ struct ContentView: View {
             TimerView()
                 .tabItem {
                     VStack {
-                        Image("first")
+                        Image(systemName: "hare")
                         Text("Hiitタイマー")
                     }
                 }
@@ -30,7 +30,7 @@ struct ContentView: View {
             CalcView()
                 .tabItem {
                     VStack {
-                        Image("second")
+                        Image(systemName: "pencil.and.outline")
                         Text("TDEE計算")
                     }
                 }
