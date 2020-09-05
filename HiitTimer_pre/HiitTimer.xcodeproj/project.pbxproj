@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,9 +22,13 @@
 		465A6BF824DDA12B00299B78 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BF724DDA12B00299B78 /* CountDownTimer.swift */; };
 		465A6C7A24E0465500299B78 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6C7924E0465500299B78 /* SettingView.swift */; };
 		465A6C7C24E04BC600299B78 /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6C7B24E04BC600299B78 /* ShareData.swift */; };
+		467F82C12503D3B20063F496 /* AdMobBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467F82C02503D3B20063F496 /* AdMobBarView.swift */; };
+		C6CDD06C2B40AB0A8EF96F7C /* Pods_HiitTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121279C7C6807D1C11393235 /* Pods_HiitTimer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		121279C7C6807D1C11393235 /* Pods_HiitTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiitTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29035FB24D7A820D63D6F90C /* Pods-HiitTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiitTimer.release.xcconfig"; path = "Target Support Files/Pods-HiitTimer/Pods-HiitTimer.release.xcconfig"; sourceTree = "<group>"; };
 		464007AB24EF3B12009204AA /* TimerCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCircle.swift; sourceTree = "<group>"; };
 		464007AD24F277A4009204AA /* SettingCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCheckView.swift; sourceTree = "<group>"; };
 		464007AF24F32F31009204AA /* CalcInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcInputView.swift; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 		465A6BF724DDA12B00299B78 /* CountDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
 		465A6C7924E0465500299B78 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		465A6C7B24E04BC600299B78 /* ShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
+		467F82C02503D3B20063F496 /* AdMobBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobBarView.swift; sourceTree = "<group>"; };
+		5155CE7204892089CDB51946 /* Pods-HiitTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiitTimer.debug.xcconfig"; path = "Target Support Files/Pods-HiitTimer/Pods-HiitTimer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6CDD06C2B40AB0A8EF96F7C /* Pods_HiitTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +67,8 @@
 			children = (
 				465A6BDC24DC4A5700299B78 /* HiitTimer */,
 				465A6BDB24DC4A5700299B78 /* Products */,
+				E28CB552C8FE3F1ED60E34E5 /* Pods */,
+				EE1B5921758D8AB0505339FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +95,7 @@
 				464007AD24F277A4009204AA /* SettingCheckView.swift */,
 				465A6BF324DC4CD100299B78 /* CalcView.swift */,
 				464007AF24F32F31009204AA /* CalcInputView.swift */,
+				467F82C02503D3B20063F496 /* AdMobBarView.swift */,
 				465A6BE324DC4A5C00299B78 /* Assets.xcassets */,
 				465A6BE824DC4A5C00299B78 /* LaunchScreen.storyboard */,
 				465A6BEB24DC4A5C00299B78 /* Info.plist */,
@@ -102,6 +112,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E28CB552C8FE3F1ED60E34E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5155CE7204892089CDB51946 /* Pods-HiitTimer.debug.xcconfig */,
+				29035FB24D7A820D63D6F90C /* Pods-HiitTimer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EE1B5921758D8AB0505339FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				121279C7C6807D1C11393235 /* Pods_HiitTimer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +136,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 465A6BEE24DC4A5C00299B78 /* Build configuration list for PBXNativeTarget "HiitTimer" */;
 			buildPhases = (
+				6961C5CC30283040CFEAEC03 /* [CP] Check Pods Manifest.lock */,
 				465A6BD624DC4A5700299B78 /* Sources */,
 				465A6BD724DC4A5700299B78 /* Frameworks */,
 				465A6BD824DC4A5700299B78 /* Resources */,
+				B1B67951C6D83F1D58E273AF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,6 +197,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6961C5CC30283040CFEAEC03 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HiitTimer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1B67951C6D83F1D58E273AF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HiitTimer/Pods-HiitTimer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HiitTimer/Pods-HiitTimer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HiitTimer/Pods-HiitTimer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		465A6BD624DC4A5700299B78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -182,6 +253,7 @@
 				465A6BF824DDA12B00299B78 /* CountDownTimer.swift in Sources */,
 				465A6BF424DC4CD100299B78 /* CalcView.swift in Sources */,
 				464007B024F32F31009204AA /* CalcInputView.swift in Sources */,
+				467F82C12503D3B20063F496 /* AdMobBarView.swift in Sources */,
 				464007AC24EF3B12009204AA /* TimerCircle.swift in Sources */,
 				465A6BE224DC4A5700299B78 /* ContentView.swift in Sources */,
 				465A6C7C24E04BC600299B78 /* ShareData.swift in Sources */,
@@ -318,6 +390,7 @@
 		};
 		465A6BEF24DC4A5C00299B78 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5155CE7204892089CDB51946 /* Pods-HiitTimer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -338,6 +411,7 @@
 		};
 		465A6BF024DC4A5C00299B78 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29035FB24D7A820D63D6F90C /* Pods-HiitTimer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

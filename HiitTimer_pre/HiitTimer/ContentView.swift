@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     // 共有するデータを保持
     @EnvironmentObject var shareData: ShareData
     
@@ -16,25 +17,29 @@ struct ContentView: View {
     @State private var selection = 0
  
     var body: some View {
-        TabView(selection: $selection){
-            
-            TimerView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "hare")
-                        Text("Hiitタイマー")
+        VStack{
+            TabView(selection: $selection){
+                
+                TimerView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "hare")
+                            Text("Hiitタイマー")
+                        }
                     }
-                }
-                .tag(0)
-            
-            CalcView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "pencil.and.outline")
-                        Text("TDEE計算")
+                    .tag(0)
+                
+                CalcView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "pencil.and.outline")
+                            Text("TDEE計算")
+                        }
                     }
-                }
-                .tag(1)
+                    .tag(1)
+            }
+            // 広告を表示
+            AdMobBarView().frame(width: 320, height: 50)
         }
     }
 }

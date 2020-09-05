@@ -56,7 +56,10 @@ struct CalcView: View {
                     
                 }
             }
-            Spacer()
+            
+            // 広告を表示
+            AdMobBarView().frame(width: 320, height: 50)
+
         }
     }
 }
