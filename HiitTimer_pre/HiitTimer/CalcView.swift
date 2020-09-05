@@ -17,16 +17,21 @@ struct CalcView: View {
     var body: some View {
         NavigationView {
             VStack{
-                NavigationLink(destination: CalcInputView()){
-                    Text("TDEE計算ページ")
-                }
                 Toggle(isOn: $userLoseWeightMode) {
-                    VStack(alignment: .leading) {
-                        Text("体脂肪を")
-                            .font(.title)
-                        Text(userLoseWeightMode ? "減らしたいとき" : "維持したいとき")
-                            .font(.title)
+                    HStack {
+                        Image(systemName: userLoseWeightMode ? "flame" : "star.fill")
+                            .frame(width: 70, height: 70)
+                            .font(.system(size: 50))
                             .foregroundColor(userLoseWeightMode ? Color.red : Color.blue)
+                        
+                        
+                        VStack(alignment: .leading) {
+                            Text("体脂肪を")
+                                .font(.title)
+                            Text(userLoseWeightMode ? "減らしたいとき" : "維持したいとき")
+                                .font(.title)
+                                .foregroundColor(userLoseWeightMode ? Color.red : Color.blue)
+                        }
                     }
                 }.padding()
                 
@@ -39,8 +44,17 @@ struct CalcView: View {
                 Text("炭水化物/ \(userLoseWeightMode ? self.shareData.userCarbohydrateLoseWeight : self.shareData.userCarbohydrateMaintainWeight)g")
                 Text("タンパク質/ \(self.shareData.userProtein)g")
                 Text("脂質/ \(userLoseWeightMode ? self.shareData.userLipidLoseWeight : self.shareData.userLipidMaintainWeight)g")
-                Divider()
-                
+                Divider().padding(.bottom, 20.0)
+            
+                NavigationLink(destination: CalcInputView()){
+                    Text("TDEEを計算する")
+                        .font(.title)
+                        .foregroundColor(Color.white)
+                    .background(RoundedRectangle(cornerRadius: 20)
+                        .frame(width: 300, height: 40)
+                        .foregroundColor(Color.pink))
+                    
+                }
             }
             Spacer()
         }
