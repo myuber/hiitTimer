@@ -131,6 +131,10 @@ struct CalcInputView: View {
             }){
                 Text("TDEEを計算する")
                     .font(.title)
+                        .foregroundColor(Color.white)
+                    .background(RoundedRectangle(cornerRadius: 20)
+                        .frame(width: 300, height: 40)
+                        .foregroundColor(Color.pink))
                 
             }
         }
