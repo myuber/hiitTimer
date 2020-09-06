@@ -20,7 +20,7 @@ struct TimerCircle: View {
                 .stroke(Color(.systemGray), style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .bevel))
                 .aspectRatio(contentMode: .fit)
                 .padding()
-            
+            /*
             // インターバルのプログレスバーを描画
              Circle()
             .trim(from: 0, to: CGFloat(self.countdowntimer.intervalCopy)/CGFloat(self.shareData.INTERVALS[self.shareData.selectInterval])
@@ -38,7 +38,18 @@ struct TimerCircle: View {
             .rotationEffect(Angle(degrees: -90))
                 .animation(.linear(duration: 1)) //アニメーションを追加
             .padding()
+            */
             
+            // 水色のプログレスバーを描画
+             Circle()
+            .trim(from: 0, to:
+                self.countdowntimer.isCounter ? CGFloat(self.countdowntimer.counterCopy)/CGFloat(self.shareData.TIMES[self.shareData.selectTime]) : CGFloat(self.countdowntimer.intervalCopy)/CGFloat(self.shareData.INTERVALS[self.shareData.selectInterval])
+             ).stroke(self.countdowntimer.isCounter ? Color(.systemPink) : Color(.systemTeal),
+                     style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .bevel))
+            .aspectRatio(contentMode: .fit)
+            .rotationEffect(Angle(degrees: -90))
+                .animation(.linear(duration: 1)) //アニメーションを追加
+            .padding()
         }
     }
 }

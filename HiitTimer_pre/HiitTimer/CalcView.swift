@@ -55,11 +55,7 @@ struct CalcView: View {
                         .foregroundColor(Color.pink))
                     
                 }
-            }
-            
-            // 広告を表示
-            AdMobBarView().frame(width: 320, height: 50)
-
+            }.navigationBarTitle("TDEE計算", displayMode: .inline)
         }
     }
 }
