@@ -48,9 +48,12 @@ class CountDownTimer: ObservableObject {
         }
         
         // Copyを作成してタイマーを起動する
+        // 停止中にスタートを押すとタイマーが最初の値に戻ってしまうため、初期値のとき以外はsetCopyしない
         // セット回数だけはタイマーが無限ループしてしまうので、setCopyとは別で呼び出す
-        setCopy()
-        self.numOfTimesCopy = self.numOfTimes
+        if counterCopy == 0, intervalCopy == 0, numOfTimesCopy == 0 {
+            setCopy()
+            self.numOfTimesCopy = self.numOfTimes
+        }
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {_ in
             // counterが0になるまでカウントダウンする
