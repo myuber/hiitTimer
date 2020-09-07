@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 // タイマークラスを定義
 class CountDownTimer: ObservableObject {
@@ -20,6 +21,46 @@ class CountDownTimer: ObservableObject {
     
     // counter/intervalの判定用変数
     @Published var isCounter: Bool = true
+    
+    
+    /*
+    var sound: AVAudioPlayer?
+
+    func playSound() {
+
+        if let path = Bundle.main.path(forResource: "2_cymbal", ofType: "mp3") {
+            do {
+                sound = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+                print("Playing sound")
+                sound?.play()
+            } catch {
+                print( "Could not find file")
+            }
+        }
+     //事前に一度再生をしておかないとず正しく再生されないことがあるのでこいつを呼び出しておく
+     soundPlayer.prepareToPlay()
+    }*/
+    
+    
+    
+    // ブザー用のプレイヤーインスタンスを作成
+    var soundPlayer: AVAudioPlayer?
+    
+    
+    func soundPlay() {
+        // ブザーの音源の場所を指定
+        if let path = Bundle.main.path(forResource: "alerm", ofType: "mp3") {
+            //プロジェクト内にあるパスを参照
+            do {
+                soundPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+                // 音源再生
+                soundPlayer?.play()
+            } catch let error {
+                print("\(error)が発生しました")
+            }
+        }
+    }
+    
     
     init(_ countNum: Int, _ intervalNum: Int, _ timesNum: Int){
         self.counter = countNum
@@ -51,20 +92,27 @@ class CountDownTimer: ObservableObject {
         // 停止中にスタートを押すとタイマーが最初の値に戻ってしまうため、初期値のとき以外はsetCopyしない
         // セット回数だけはタイマーが無限ループしてしまうので、setCopyとは別で呼び出す
         if counterCopy == 0, intervalCopy == 0, numOfTimesCopy == 0 {
+            self.soundPlay()
             setCopy()
             self.numOfTimesCopy = self.numOfTimes
         }
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {_ in
             // counterが0になるまでカウントダウンする
-            if self.counterCopy > 0 {
+            if (4 < self.counterCopy) {
+                self.counterCopy -= 1
+            } else if (0 < self.counterCopy && self.counterCopy <= 4) {
+                self.soundPlay()
                 self.counterCopy -= 1
             } else {
                 if self.isCounter {
                     self.isCounter = false
                 }
                // intervalが0になるまでカウントダウンする
-                if self.intervalCopy > 0 {
+                if (4 < self.intervalCopy) {
+                    self.intervalCopy -= 1
+                } else if (0 < self.intervalCopy && self.intervalCopy <= 4) {
+                    self.soundPlay()
                     self.intervalCopy -= 1
                 }else{
                     
@@ -81,6 +129,36 @@ class CountDownTimer: ObservableObject {
                 }
             }
         }
+        
+        /* 正常に動くコード
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {_ in
+            // counterが0になるまでカウントダウンする
+            if self.counterCopy > 0 {
+                self.counterCopy -= 1
+            } else {
+                if self.isCounter {
+                    self.isCounter = false
+                    self.soundPlay()
+                }
+               // intervalが0になるまでカウントダウンする
+                if self.intervalCopy > 0 {
+                    self.intervalCopy -= 1
+                    
+                }else{
+                    
+                    self.numOfTimesCopy -= 1
+                    
+                    if self.numOfTimesCopy <= 0 {
+                        // どちらも0なら終了
+                        self.isEnd = true
+                        self.stop()
+                    } else {
+                        self.setCopy()
+                        self.isCounter = true
+                    }
+                }
+            }
+        }*/
     }
 
     // タイマーを止める
