@@ -23,28 +23,9 @@ class CountDownTimer: ObservableObject {
     @Published var isCounter: Bool = true
     
     
-    /*
-    var sound: AVAudioPlayer?
-
-    func playSound() {
-
-        if let path = Bundle.main.path(forResource: "2_cymbal", ofType: "mp3") {
-            do {
-                sound = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-                print("Playing sound")
-                sound?.play()
-            } catch {
-                print( "Could not find file")
-            }
-        }
-     //事前に一度再生をしておかないとず正しく再生されないことがあるのでこいつを呼び出しておく
-     soundPlayer.prepareToPlay()
-    }*/
-    
-    
-    
     // ブザー用のプレイヤーインスタンスを作成
     var soundPlayer: AVAudioPlayer?
+    var EndSoundPlayer: AVAudioPlayer?
     
     
     func soundPlay() {
@@ -55,6 +36,20 @@ class CountDownTimer: ObservableObject {
                 soundPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
                 // 音源再生
                 soundPlayer?.play()
+            } catch let error {
+                print("\(error)が発生しました")
+            }
+        }
+    }
+    
+    func EndSoundPlay() {
+        // ブザーの音源の場所を指定
+        if let path = Bundle.main.path(forResource: "decision", ofType: "mp3") {
+            //プロジェクト内にあるパスを参照
+            do {
+                EndSoundPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+                // 音源再生
+                EndSoundPlayer?.play()
             } catch let error {
                 print("\(error)が発生しました")
             }
@@ -121,6 +116,7 @@ class CountDownTimer: ObservableObject {
                     if self.numOfTimesCopy <= 0 {
                         // どちらも0なら終了
                         self.isEnd = true
+                        self.EndSoundPlay()
                         self.stop()
                     } else {
                         self.setCopy()
