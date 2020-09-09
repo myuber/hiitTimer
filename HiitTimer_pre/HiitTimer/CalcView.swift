@@ -55,8 +55,7 @@ struct CalcView: View {
                         .foregroundColor(Color.pink))
                     
                 }
-            }
-            Spacer()
+            }.navigationBarTitle("TDEE計算", displayMode: .inline)
         }
     }
 }

@@ -73,6 +73,7 @@ struct TimerView: View {
                 Spacer()
                 
             } //VStack
+                .navigationBarTitle("Hiitタイマー", displayMode: .inline)
                 
             // タイマーが0になったら、アラートを表示する
             // アラートのOKボタンを押すと、countdowntimerのresetメソッドを実行
@@ -83,7 +84,6 @@ struct TimerView: View {
                 ) // Alert
             }) // alert
             .onAppear{self.TimerReset()}
-            .navigationBarHidden(true)
         } // NavigationView
     } // body
 } // struct

@@ -135,8 +135,10 @@ struct CalcInputView: View {
                     .background(RoundedRectangle(cornerRadius: 20)
                         .frame(width: 300, height: 40)
                         .foregroundColor(Color.pink))
+                    .padding(.bottom,20)
                 
             }
+            Spacer()
         }
     }
 }
