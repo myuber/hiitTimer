@@ -16,7 +16,7 @@ struct CalcView: View {
     
     var body: some View {
         NavigationView {
-            VStack{
+            VStack {
                 Toggle(isOn: $userLoseWeightMode) {
                     HStack {
                         Image(systemName: userLoseWeightMode ? "flame" : "star.fill")
@@ -36,14 +36,16 @@ struct CalcView: View {
                 }.padding()
                 
                 Divider()
-                Text("基礎代謝/ \(self.shareData.userBMR)kcal")
-                Text("TDEE/ \(self.shareData.userTDEE)kcal")
-                
+                Group {
+                    Text("基礎代謝/ \(self.shareData.userBMR)kcal")
+                    Text("TDEE/ \(self.shareData.userTDEE)kcal")
+                }
                 Divider()
-                
-                Text("炭水化物/ \(userLoseWeightMode ? self.shareData.userCarbohydrateLoseWeight : self.shareData.userCarbohydrateMaintainWeight)g")
-                Text("タンパク質/ \(self.shareData.userProtein)g")
-                Text("脂質/ \(userLoseWeightMode ? self.shareData.userLipidLoseWeight : self.shareData.userLipidMaintainWeight)g")
+                Group {
+                    Text("炭水化物/ \(userLoseWeightMode ? self.shareData.userCarbohydrateLoseWeight : self.shareData.userCarbohydrateMaintainWeight)g")
+                    Text("タンパク質/ \(self.shareData.userProtein)g")
+                    Text("脂質/ \(userLoseWeightMode ? self.shareData.userLipidLoseWeight : self.shareData.userLipidMaintainWeight)g")
+                }
                 Divider().padding(.bottom, 20.0)
             
                 NavigationLink(destination: CalcInputView()){
@@ -54,6 +56,17 @@ struct CalcView: View {
                         .frame(width: 300, height: 40)
                         .foregroundColor(Color.pink))
                     
+                }
+                
+                NavigationLink(destination: CalcInputView()){
+                    
+                    HStack {
+                        Spacer()
+                        Text("各種数値について")
+                            .multilineTextAlignment(.trailing)
+                            .padding(.top, 10.0)
+                            .padding(.trailing, 10.0)
+                    }
                 }
             }.navigationBarTitle("TDEE計算", displayMode: .inline)
         }
