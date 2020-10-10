@@ -27,7 +27,6 @@ struct TimerCircle: View {
             ).stroke(Color(.systemTeal), style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .bevel))
             .aspectRatio(contentMode: .fit)
             .rotationEffect(Angle(degrees: -90))
-                //.animation(.linear(duration: 1)) //アニメーションを追加
             .padding()
             
             // トレーニングのプログレスバーを描画
@@ -36,7 +35,6 @@ struct TimerCircle: View {
             ).stroke(Color(.systemPink), style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .bevel))
             .aspectRatio(contentMode: .fit)
             .rotationEffect(Angle(degrees: -90))
-                //.animation(.linear(duration: 1)) //アニメーションを追加
             .padding()
             
             
@@ -44,15 +42,7 @@ struct TimerCircle: View {
     }
 }
 
-/*
-// 水色のプログレスバーを描画
- Circle()
-.trim(from: 0, to:
-    self.countdowntimer.isCounter ? CGFloat(self.countdowntimer.counter)/CGFloat(self.shareData.TIMES[self.shareData.selectTime]) : CGFloat(self.countdowntimer.interval)/CGFloat(self.shareData.INTERVALS[self.shareData.selectInterval])
-).stroke(Color(.systemTeal), style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .bevel))
-.aspectRatio(contentMode: .fit)
-.rotationEffect(Angle(degrees: -90))
-*/
+
 
 struct TimerCircle_Previews: PreviewProvider {
     static var cdt = CountDownTimer(20, 10, 8)
