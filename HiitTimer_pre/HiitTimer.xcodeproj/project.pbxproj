@@ -22,6 +22,7 @@
 		465A6BF824DDA12B00299B78 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6BF724DDA12B00299B78 /* CountDownTimer.swift */; };
 		465A6C7A24E0465500299B78 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6C7924E0465500299B78 /* SettingView.swift */; };
 		465A6C7C24E04BC600299B78 /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A6C7B24E04BC600299B78 /* ShareData.swift */; };
+		4667A52C2531E22000085561 /* CalcTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667A52B2531E22000085561 /* CalcTextView.swift */; };
 		467F82C12503D3B20063F496 /* AdMobBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467F82C02503D3B20063F496 /* AdMobBarView.swift */; };
 		467F82C325066CA80063F496 /* alerm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 467F82C225066CA80063F496 /* alerm.mp3 */; };
 		467F82C5250912660063F496 /* decision.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 467F82C4250912660063F496 /* decision.mp3 */; };
@@ -48,6 +49,7 @@
 		465A6BF724DDA12B00299B78 /* CountDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
 		465A6C7924E0465500299B78 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		465A6C7B24E04BC600299B78 /* ShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
+		4667A52B2531E22000085561 /* CalcTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcTextView.swift; sourceTree = "<group>"; };
 		467F82C02503D3B20063F496 /* AdMobBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobBarView.swift; sourceTree = "<group>"; };
 		467F82C225066CA80063F496 /* alerm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alerm.mp3; sourceTree = SOURCE_ROOT; };
 		467F82C4250912660063F496 /* decision.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = decision.mp3; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				464007AD24F277A4009204AA /* SettingCheckView.swift */,
 				465A6BF324DC4CD100299B78 /* CalcView.swift */,
 				464007AF24F32F31009204AA /* CalcInputView.swift */,
+				4667A52B2531E22000085561 /* CalcTextView.swift */,
 				467F82C02503D3B20063F496 /* AdMobBarView.swift */,
 				465A6BE324DC4A5C00299B78 /* Assets.xcassets */,
 				465A6BE824DC4A5C00299B78 /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 				465A6BF224DC4C7400299B78 /* TimerView.swift in Sources */,
 				465A6C7A24E0465500299B78 /* SettingView.swift in Sources */,
 				464007AE24F277A4009204AA /* SettingCheckView.swift in Sources */,
+				4667A52C2531E22000085561 /* CalcTextView.swift in Sources */,
 				465A6BF824DDA12B00299B78 /* CountDownTimer.swift in Sources */,
 				465A6BF424DC4CD100299B78 /* CalcView.swift in Sources */,
 				464007B024F32F31009204AA /* CalcInputView.swift in Sources */,
@@ -402,15 +406,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.3;
 				DEVELOPMENT_ASSET_PATHS = "\"HiitTimer/Preview Content\"";
-				DEVELOPMENT_TEAM = GL9XY9L377;
+				DEVELOPMENT_TEAM = 2U4CRCLBM4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HiitTimer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = myuber.HiitTimer;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myuber.HiitTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -423,15 +429,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.3;
 				DEVELOPMENT_ASSET_PATHS = "\"HiitTimer/Preview Content\"";
-				DEVELOPMENT_TEAM = GL9XY9L377;
+				DEVELOPMENT_TEAM = 2U4CRCLBM4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HiitTimer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = myuber.HiitTimer;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myuber.HiitTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

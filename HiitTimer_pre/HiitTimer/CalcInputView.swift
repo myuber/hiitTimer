@@ -8,6 +8,13 @@
 
 import SwiftUI
 
+// UIApplicationを拡張してキーボードを閉じる機能を実装
+extension UIApplication {
+    func closeKeyboard() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
 struct CalcInputView: View {
     // 共有のデータを保持する
     @EnvironmentObject var shareData: ShareData
@@ -65,6 +72,7 @@ struct CalcInputView: View {
         self.shareData.userCarbohydrateMaintainWeight = Int(Double(self.shareData.userTDEE) * 0.4 / 4) //炭水化物(TDEEの40%÷4kcal)
         self.shareData.userLipidMaintainWeight = Int(Double(self.shareData.userTDEE) * 0.4 / 9) //脂質(TDEEの40%÷9kcal)
     }
+    
     
     var body: some View {
         VStack{
@@ -139,6 +147,8 @@ struct CalcInputView: View {
                 
             }
             Spacer()
+        }.onTapGesture {
+            UIApplication.shared.closeKeyboard()
         }
     }
 }
