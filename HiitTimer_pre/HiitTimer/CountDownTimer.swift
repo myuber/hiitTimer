@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import AVFoundation
 
 // タイマークラスを定義
@@ -74,6 +75,11 @@ class CountDownTimer: ObservableObject {
     
     // 実際に使うタイマーを作ってスタート
     func start() {
+        // 画面スリープを停止
+        if UIApplication.shared.isIdleTimerDisabled == false {
+            UIApplication.shared.isIdleTimerDisabled = true
+        }
+        
         // timerをアンラップしてnowTimerに代入
         if let nowTimer = timer {
             // もしタイマーが、実行中だったらなにもしない
@@ -118,6 +124,10 @@ class CountDownTimer: ObservableObject {
                         self.isEnd = true
                         self.EndSoundPlay()
                         self.stop()
+                        // 画面スリープを再開
+                        if UIApplication.shared.isIdleTimerDisabled == true {
+                            UIApplication.shared.isIdleTimerDisabled = false
+                        }
                     } else {
                         self.setCopy()
                         self.isCounter = true
@@ -125,40 +135,14 @@ class CountDownTimer: ObservableObject {
                 }
             }
         }
-        
-        /* 正常に動くコード
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {_ in
-            // counterが0になるまでカウントダウンする
-            if self.counterCopy > 0 {
-                self.counterCopy -= 1
-            } else {
-                if self.isCounter {
-                    self.isCounter = false
-                    self.soundPlay()
-                }
-               // intervalが0になるまでカウントダウンする
-                if self.intervalCopy > 0 {
-                    self.intervalCopy -= 1
-                    
-                }else{
-                    
-                    self.numOfTimesCopy -= 1
-                    
-                    if self.numOfTimesCopy <= 0 {
-                        // どちらも0なら終了
-                        self.isEnd = true
-                        self.stop()
-                    } else {
-                        self.setCopy()
-                        self.isCounter = true
-                    }
-                }
-            }
-        }*/
     }
 
     // タイマーを止める
     func stop() {
+        // 画面スリープを再開
+        if UIApplication.shared.isIdleTimerDisabled == true {
+            UIApplication.shared.isIdleTimerDisabled = false
+        }
         // timerをアンラップしてnowTimerに代入
         if let nowTimer = timer {
             // もしタイマーが、実行中だったら一時停止
@@ -174,6 +158,10 @@ class CountDownTimer: ObservableObject {
     
     // タイマーをリセット
     func reset(_ countNum: Int, _ intervalNum: Int, _ timesNum: Int) {
+        // 画面スリープを再開
+        if UIApplication.shared.isIdleTimerDisabled == true {
+            UIApplication.shared.isIdleTimerDisabled = false
+        }
         // timerをアンラップしてnowTimerに代入
         if let nowTimer = timer {
             // もしタイマーが、実行中だったら中断
@@ -189,6 +177,10 @@ class CountDownTimer: ObservableObject {
     
     // タイマーの値をセットする
     func setValue(_ countNum: Int, _ intervalNum: Int, _ timesNum: Int) {
+        // 画面スリープを再開
+        if UIApplication.shared.isIdleTimerDisabled == true {
+            UIApplication.shared.isIdleTimerDisabled = false
+        }
         self.counter = countNum
         self.interval = intervalNum
         self.numOfTimes = timesNum
